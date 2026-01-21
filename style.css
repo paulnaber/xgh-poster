@@ -45,6 +45,10 @@ header h1 {
     color: #c00;
 }
 
+.highlight {
+    color: #fffb00eb;
+}
+
 .logo-container {
     margin-bottom: 40px;
 }
