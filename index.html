@@ -4,9 +4,43 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>XGH Poster</title>
-        <link rel="stylesheet" href="style.css" />
+        <link rel="stylesheet" href="style.css" id="stylesheet" />
+        <style>
+            .css-switcher {
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                z-index: 1000;
+                background: rgba(255, 255, 255, 0.9);
+                padding: 10px 15px;
+                border-radius: 8px;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+                transform-origin: top right;
+            }
+            .css-switcher label {
+                font-family: Arial, sans-serif;
+                font-size: 14px;
+                margin-right: 8px;
+                font-weight: bold;
+            }
+            .css-switcher select {
+                padding: 5px 10px;
+                border-radius: 4px;
+                border: 1px solid #ccc;
+                font-size: 14px;
+                cursor: pointer;
+                min-width: 100px;
+            }
+        </style>
     </head>
     <body>
+        <div class="css-switcher no-zoom">
+            <label for="style-selector">Style:</label>
+            <select id="style-selector">
+                <option value="style.css">Style 1</option>
+                <option value="styles2.css">Style 2</option>
+            </select>
+        </div>
         <div class="container">
             <div class="poster">
                 <div class="logo-container">
@@ -324,5 +358,24 @@
                 </main>
             </div>
         </div>
+        <script>
+            const styleSelector = document.getElementById('style-selector');
+            const stylesheet = document.getElementById('stylesheet');
+            const switcher = document.querySelector('.css-switcher');
+
+            // Load saved preference from localStorage
+            const savedStyle = localStorage.getItem('selectedStyle');
+            if (savedStyle) {
+                stylesheet.href = savedStyle;
+                styleSelector.value = savedStyle;
+            }
+
+            // Switch stylesheet on change
+            styleSelector.addEventListener('change', function () {
+                const newStyle = this.value;
+                stylesheet.href = newStyle;
+                localStorage.setItem('selectedStyle', newStyle);
+            });
+        </script>
     </body>
 </html>
