@@ -346,6 +346,18 @@
                 </div>
             </div>
         </div>
+        <div class="settings-controls control-panel collapsed no-zoom">
+            <div class="panel-header">
+                <span class="panel-title">Settings</span>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <div class="panel-content">
+                <div class="settings-buttons">
+                    <button id="edit-btn" class="settings-btn">Edit CSS</button>
+                    <button id="reset-btn" class="settings-btn">Reset</button>
+                </div>
+            </div>
+        </div>
         <div class="container">
             <div class="poster">
                 <div class="logo-container">
@@ -668,7 +680,27 @@
                 </div>
             </div>
         </div>
+        
+        <!-- CSS Properties Modal -->
+        <div id="css-modal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>CSS Custom Properties</h2>
+                    <span class="modal-close">&times;</span>
+                </div>
+                <div class="modal-body">
+                    <textarea id="css-properties" readonly></textarea>
+                </div>
+                <div class="modal-footer">
+                    <button id="copy-css-btn" class="modal-btn">Copy to Clipboard</button>
+                    <button id="apply-css-btn" class="modal-btn">Apply</button>
+                    <button id="close-modal-btn" class="modal-btn secondary">Close</button>
+                </div>
+            </div>
+        </div>
+
         <script src="scripts/init-controls.js"></script>
+        <script src="scripts/settings-manager.js"></script>
         <script src="scripts/panels.js"></script>
         <script src="scripts/style-switcher.js"></script>
         <script src="scripts/zoom.js"></script>
