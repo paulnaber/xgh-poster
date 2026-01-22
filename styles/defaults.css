@@ -36,4 +36,7 @@ body {
     /* Icon configuration */
     --icon-filter: none;
     --icon-opacity: 1;
+
+    /* Background configuration */
+    --background-image: url('../images/solid-painted-concrete-wall-textured-backdrop.jpg');
 }

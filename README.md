@@ -15,3 +15,7 @@ I saved some images inside the results directory.
 
 ![Showcase Image 1](./showcases/showcase-1.png)
 ![Showcase Image 2](./showcases/showcase-2.png)
+
+### Why is there no tests in this project?
+
+see axiom 20
