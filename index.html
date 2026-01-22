@@ -519,6 +519,11 @@
             if (savedStyle) {
                 stylesheet.href = savedStyle;
                 styleSelector.value = savedStyle;
+            } else {
+                // Set default style on first load
+                const defaultStyle = 'styles/layout-1.css';
+                stylesheet.href = defaultStyle;
+                styleSelector.value = defaultStyle;
             }
 
             // Switch stylesheet on change
