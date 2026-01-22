@@ -1,0 +1,145 @@
+@font-face {
+    font-family: 'academy';
+    src: url('../fonts/Academy Engraved LET Fonts.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'baskerville';
+    src: url('../fonts/Baskerville.ttc');
+}
+
+body {
+    --black: #000;
+    --white: #fff;
+    --red: #c00;
+    --highlight: #fffb00eb;
+    --white-translucent: #ffffffe3;
+    --width: 3780px;
+    --height: 5292px;
+}
+
+body {
+    background-color: var(--white);
+    color: var(--white-translucent);
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: var(--width);
+    height: var(--height);
+    background-color: var(--black);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    /* padding: 160px; */
+    border: none;
+}
+
+.poster {
+    height: 100%;
+    width: 100%;
+    padding: 250px 300px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    /* border: 4px solid var(--white); */
+}
+
+.poster::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('../images/solid-painted-concrete-wall-textured-backdrop.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.3;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.poster::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* The Gradient */
+    background: radial-gradient(
+        circle,
+        rgba(0, 0, 0, 0) 30%,
+        rgba(0, 0, 0, 0.7) 100%
+    );
+}
+
+.poster > * {
+    position: relative;
+    z-index: 1;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 170px;
+}
+
+header h1 {
+    font-family: 'academy', sans-serif;
+    font-size: 250px;
+    color: var(--white-translucent);
+    opacity: 0.8;
+    margin: 0;
+}
+
+.headline-letters {
+    color: var(--red);
+}
+
+.highlight {
+    color: var(--highlight);
+}
+
+.logo-container {
+    margin-bottom: 50px;
+}
+
+.logo {
+    width: 500px;
+}
+
+.axioms {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2cm 4cm;
+    width: 100%;
+}
+
+.axiom {
+    display: grid;
+    grid-template-columns: 180px auto;
+}
+
+.axiom h2 {
+    font-family: 'academy', sans-serif;
+    font-size: 80pt;
+    color: var(--white-translucent);
+    opacity: 0.7;
+    margin: 0;
+    line-height: 1;
+}
+
+.axiom p {
+    font-family: 'baskerville', serif;
+    font-size: 35pt;
+    margin: 0;
+    opacity: 0.85;
+    margin-top: -16px;
+}

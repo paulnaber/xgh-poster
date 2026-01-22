@@ -11,7 +11,7 @@
 body {
     --black: #000;
     --white: #fff;
-    --red: #c00;
+    --headline-xgh: #fffb00eb;
     --highlight: #fffb00eb;
     --white-translucent: #ffffffe3;
     --width: 3780px;
@@ -99,8 +99,8 @@ header h1 {
     margin: 0;
 }
 
-.red {
-    color: var(--red);
+.headline-letters {
+    color: var(--headline-xgh);
 }
 
 .highlight {
