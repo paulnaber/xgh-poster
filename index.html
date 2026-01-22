@@ -8,27 +8,42 @@
         <link rel="stylesheet" href="styles/controls.css" />
     </head>
     <body>
-        <div class="css-switcher no-zoom">
-            <label for="style-selector">Style:</label>
-            <select id="style-selector">
-                <option value="styles/layout-1.css">Layout 1</option>
-            </select>
+        <div class="css-switcher control-panel collapsed no-zoom">
+            <div class="panel-header">
+                <span class="panel-title">Style</span>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <div class="panel-content">
+                <label for="style-selector">Layout:</label>
+                <select id="style-selector">
+                    <option value="styles/layout-1.css">Layout 1</option>
+                </select>
+            </div>
         </div>
-        <div class="zoom-controls no-zoom">
-            <label for="zoom-slider">Zoom:</label>
-            <input
-                type="range"
-                id="zoom-slider"
-                min="10"
-                max="100"
-                value="100"
-                step="1"
-            />
-            <span class="zoom-value">100%</span>
+        <div class="zoom-controls control-panel no-zoom">
+            <div class="panel-header">
+                <span class="panel-title">Zoom</span>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <div class="panel-content">
+                <input
+                    type="range"
+                    id="zoom-slider"
+                    min="10"
+                    max="100"
+                    value="25"
+                    step="1"
+                />
+                <span class="zoom-value">25%</span>
+            </div>
         </div>
-        <div class="color-picker no-zoom">
-            <label>Colors:</label>
-            <div class="color-grid">
+        <div class="color-picker control-panel collapsed no-zoom">
+            <div class="panel-header">
+                <span class="panel-title">Colors</span>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <div class="panel-content">
+                <div class="color-grid">
                 <div class="color-group">
                     <span class="color-label">Background:</span>
                     <div class="color-options" data-property="--black">
@@ -187,10 +202,15 @@
                     </div>
                 </div>
             </div>
+            </div>
         </div>
-        <div class="gradient-controls no-zoom">
-            <label>Radial Gradient:</label>
-            <div class="gradient-section">
+        <div class="gradient-controls control-panel collapsed no-zoom">
+            <div class="panel-header">
+                <span class="panel-title">Radial Gradient</span>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <div class="panel-content">
+                <div class="gradient-section">
                 <div class="gradient-control">
                     <label for="gradient-color">Color:</label>
                     <input type="color" id="gradient-color" value="#000000" />
@@ -249,6 +269,7 @@
                         >100%</span
                     >
                 </div>
+            </div>
             </div>
         </div>
         <div class="container">
@@ -570,9 +591,56 @@
                         </p>
                     </div>
                 </main>
-            </div>
-        </div>
+            </div>            </div>        </div>
         <script>
+            // Panel toggle functionality with dynamic positioning
+            const panels = document.querySelectorAll('.control-panel');
+            
+            // Calculate panel positions based on expanded/collapsed state
+            function updatePanelPositions() {
+                let currentTop = 20; // Start position
+                const gap = 10; // Gap between panels
+                
+                panels.forEach(panel => {
+                    panel.style.top = currentTop + 'px';
+                    
+                    // Get actual height of the panel
+                    const height = panel.offsetHeight;
+                    currentTop += height + gap;
+                });
+            }
+            
+            panels.forEach(panel => {
+                const header = panel.querySelector('.panel-header');
+                const panelClass = panel.classList[0]; // Get the first class (css-switcher, zoom-controls, etc.)
+                
+                // Load saved state from localStorage (except zoom which is always visible)
+                if (panelClass !== 'zoom-controls') {
+                    const isCollapsed = localStorage.getItem(`panel-${panelClass}-collapsed`);
+                    if (isCollapsed === 'false') {
+                        panel.classList.remove('collapsed');
+                    }
+                }
+                
+                header.addEventListener('click', () => {
+                    // Don't allow zoom to be collapsed
+                    if (panelClass === 'zoom-controls') {
+                        return;
+                    }
+                    
+                    panel.classList.toggle('collapsed');
+                    // Save state to localStorage
+                    localStorage.setItem(`panel-${panelClass}-collapsed`, panel.classList.contains('collapsed'));
+                    
+                    // Update positions after state change
+                    // Use setTimeout to allow CSS transition to update height
+                    setTimeout(updatePanelPositions, 10);
+                });
+            });
+            
+            // Initial position calculation
+            setTimeout(updatePanelPositions, 10);
+
             const styleSelector = document.getElementById('style-selector');
             const stylesheet = document.getElementById('stylesheet');
             const switcher = document.querySelector('.css-switcher');
@@ -606,6 +674,9 @@
             if (savedZoom) {
                 zoomSlider.value = savedZoom;
                 applyZoom(savedZoom);
+            } else {
+                // Apply default zoom of 25%
+                applyZoom(25);
             }
 
             // Apply zoom function
