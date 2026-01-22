@@ -6,6 +6,7 @@ Right click DOM Node -> "Capture node screenshot"
 I saved some images inside the results directory.
 
 Live here -> https://paulnaber.github.io/xgh-poster/
+Displate link -> https://displate.com/artist/paulnaber?art=63dfad5946daf
 
 ## Showcases
 
