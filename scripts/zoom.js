@@ -1,7 +1,6 @@
 // Zoom slider functionality
 const zoomSlider = document.getElementById('zoom-slider');
 const zoomValue = document.querySelector('.zoom-value');
-const container = document.querySelector('.container');
 
 // Load saved zoom from localStorage
 const savedZoom = localStorage.getItem('zoomLevel');
@@ -9,15 +8,19 @@ if (savedZoom) {
     zoomSlider.value = savedZoom;
     applyZoom(savedZoom);
 } else {
-    // Apply default zoom of 25%
-    applyZoom(25);
+    // Get default zoom from CSS custom property
+    const defaultZoomScale =
+        parseFloat(
+            getComputedStyle(document.body).getPropertyValue('--zoom-scale')
+        ) || 0.25;
+    const defaultZoomPercent = defaultZoomScale * 100;
+    applyZoom(defaultZoomPercent);
 }
 
 // Apply zoom function
 function applyZoom(value) {
     const scale = value / 100;
-    container.style.transform = `scale(${scale})`;
-    container.style.transformOrigin = 'top left';
+    document.body.style.setProperty('--zoom-scale', scale);
     zoomValue.textContent = value + '%';
 }
 

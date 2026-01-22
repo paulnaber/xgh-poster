@@ -10,54 +10,36 @@ document.addEventListener('DOMContentLoaded', function () {
     // Apply headline font
     headlineFont.addEventListener('change', function () {
         const selectedFont = this.value;
-        const headline = document.querySelector('header h1');
-        if (headline) {
-            headline.style.fontFamily = selectedFont;
-        }
+        document.body.style.setProperty('--headline-font', selectedFont);
     });
 
     // Apply headline size
     headlineSize.addEventListener('input', function () {
         const size = this.value;
-        const headline = document.querySelector('header h1');
-        if (headline) {
-            headline.style.fontSize = size + 'px';
-        }
+        document.body.style.setProperty('--headline-size', size + 'px');
     });
 
     // Apply axiom number font
     axiomNumberFont.addEventListener('change', function () {
         const selectedFont = this.value;
-        const axiomNumbers = document.querySelectorAll('.axiom h2');
-        axiomNumbers.forEach((number) => {
-            number.style.fontFamily = selectedFont;
-        });
+        document.body.style.setProperty('--axiom-number-font', selectedFont);
     });
 
     // Apply axiom number size
     axiomNumberSize.addEventListener('input', function () {
         const size = this.value;
-        const axiomNumbers = document.querySelectorAll('.axiom h2');
-        axiomNumbers.forEach((number) => {
-            number.style.fontSize = size + 'pt';
-        });
+        document.body.style.setProperty('--axiom-number-size', size + 'pt');
     });
 
     // Apply body text font
     bodyFont.addEventListener('change', function () {
         const selectedFont = this.value;
-        const axiomTexts = document.querySelectorAll('.axiom p');
-        axiomTexts.forEach((text) => {
-            text.style.fontFamily = selectedFont;
-        });
+        document.body.style.setProperty('--body-font', selectedFont);
     });
 
     // Apply body text size
     bodySize.addEventListener('input', function () {
         const size = this.value;
-        const axiomTexts = document.querySelectorAll('.axiom p');
-        axiomTexts.forEach((text) => {
-            text.style.fontSize = size + 'pt';
-        });
+        document.body.style.setProperty('--body-size', size + 'pt');
     });
 });

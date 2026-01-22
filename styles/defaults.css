@@ -1,0 +1,39 @@
+/* XGH Poster - Default Configuration */
+/* All styling is controlled through CSS custom properties */
+
+body {
+    /* Color configuration */
+    --black: #000;
+    --white: #fff;
+    --headline-xgh: #fffb00eb;
+    --highlight: #fffb00eb;
+    --white-translucent: #ffffffe3;
+
+    /* Poster dimensions */
+    --width: 3780px;
+    --height: 5292px;
+
+    /* Radial gradient configuration */
+    --gradient-color-r: 0;
+    --gradient-color-g: 0;
+    --gradient-color-b: 0;
+    --gradient-inner-opacity: 0;
+    --gradient-outer-opacity: 0.7;
+    --gradient-inner-percent: 30%;
+    --gradient-outer-percent: 100%;
+
+    /* Font and size configuration */
+    --headline-font: 'academy', sans-serif;
+    --headline-size: 250px;
+    --axiom-number-font: 'academy', sans-serif;
+    --axiom-number-size: 80pt;
+    --body-font: 'baskerville', serif;
+    --body-size: 35pt;
+
+    /* Zoom configuration */
+    --zoom-scale: 0.25;
+
+    /* Icon configuration */
+    --icon-filter: none;
+    --icon-opacity: 1;
+}

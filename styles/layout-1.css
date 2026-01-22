@@ -9,25 +9,6 @@
 }
 
 body {
-    --black: #000;
-    --white: #fff;
-    --headline-xgh: #fffb00eb;
-    --highlight: #fffb00eb;
-    --white-translucent: #ffffffe3;
-    --width: 3780px;
-    --height: 5292px;
-
-    /* Radial gradient configuration */
-    --gradient-color-r: 0;
-    --gradient-color-g: 0;
-    --gradient-color-b: 0;
-    --gradient-inner-opacity: 0;
-    --gradient-outer-opacity: 0.7;
-    --gradient-inner-percent: 30%;
-    --gradient-outer-percent: 100%;
-}
-
-body {
     background-color: var(--white);
     color: var(--white-translucent);
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -46,6 +27,8 @@ body {
     box-sizing: border-box;
     /* padding: 160px; */
     border: none;
+    transform: scale(var(--zoom-scale));
+    transform-origin: top left;
 }
 
 .poster {
@@ -113,8 +96,8 @@ header {
 }
 
 header h1 {
-    font-family: 'academy', sans-serif;
-    font-size: 250px;
+    font-family: var(--headline-font);
+    font-size: var(--headline-size);
     color: var(--white-translucent);
     opacity: 0.8;
     margin: 0;
@@ -134,6 +117,8 @@ header h1 {
 
 .logo {
     width: 500px;
+    filter: var(--icon-filter);
+    opacity: var(--icon-opacity);
 }
 
 .axioms {
@@ -149,8 +134,8 @@ header h1 {
 }
 
 .axiom h2 {
-    font-family: 'academy', sans-serif;
-    font-size: 80pt;
+    font-family: var(--axiom-number-font);
+    font-size: var(--axiom-number-size);
     color: var(--white-translucent);
     opacity: 0.7;
     margin: 0;
@@ -158,8 +143,8 @@ header h1 {
 }
 
 .axiom p {
-    font-family: 'baskerville', serif;
-    font-size: 35pt;
+    font-family: var(--body-font);
+    font-size: var(--body-size);
     margin: 0;
     opacity: 0.85;
     margin-top: -16px;

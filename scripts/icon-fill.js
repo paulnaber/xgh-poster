@@ -1,16 +1,10 @@
 // Icon fill functionality
 const iconFillButtons = document.querySelectorAll('.icon-fill-btn');
-const logoImage = document.querySelector('.logo');
 
 // Load saved icon filter from localStorage
 const savedFilter = localStorage.getItem('iconFilter');
 if (savedFilter) {
-    logoImage.style.filter = savedFilter;
-    if (savedFilter !== 'none') {
-        logoImage.style.opacity = savedFilter.includes('155deg')
-            ? '0.72'
-            : '0.7';
-    }
+    applyIconFilter(savedFilter);
     updateActiveIconButton(savedFilter);
 }
 
@@ -24,21 +18,25 @@ function updateActiveIconButton(filter) {
     });
 }
 
+// Apply icon filter using CSS custom properties
+function applyIconFilter(filter) {
+    if (filter === 'none') {
+        document.body.style.setProperty('--icon-filter', 'none');
+        document.body.style.setProperty('--icon-opacity', '1');
+    } else {
+        document.body.style.setProperty('--icon-filter', filter);
+        const opacity = filter.includes('155deg') ? '0.72' : '0.7';
+        document.body.style.setProperty('--icon-opacity', opacity);
+    }
+}
+
 // Icon fill button click handler
 iconFillButtons.forEach((button) => {
     button.addEventListener('click', function () {
         const filter = this.dataset.filter;
 
-        // Update logo filter
-        if (filter === 'none') {
-            logoImage.style.filter = 'none';
-            logoImage.style.opacity = '1';
-        } else {
-            logoImage.style.filter = filter;
-            logoImage.style.opacity = filter.includes('155deg')
-                ? '0.72'
-                : '0.7';
-        }
+        // Update logo filter using custom properties
+        applyIconFilter(filter);
 
         // Update active state
         updateActiveIconButton(filter);
