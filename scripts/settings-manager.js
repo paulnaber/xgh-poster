@@ -44,8 +44,8 @@ document.addEventListener('DOMContentLoaded', function () {
         '--headline-margin',
         '--axiom-gap-row',
         '--axiom-gap-column',
-        '--axiom-text-margin',
-        '--axiom-grid-column-1',
+        '--axiom-text-offset',
+        '--axiom-gap',
         '--axiom-grid-column-2',
         '--axioms-grid-columns'
     ];

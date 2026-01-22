@@ -186,18 +186,17 @@ document.addEventListener('DOMContentLoaded', function () {
         axiomGapColumn.value = defaultValue;
     }
 
-    const axiomGridColumn1 = document.getElementById('axiom-grid-column-1');
-    if (axiomGridColumn1 && !localStorage.getItem('axiomGridColumn1')) {
+    const axiomGap = document.getElementById('axiom-gap');
+    if (axiomGap && !localStorage.getItem('axiomGap')) {
         const defaultValue =
-            parseInt(bodyStyles.getPropertyValue('--axiom-grid-column-1')) ||
-            180;
-        axiomGridColumn1.value = defaultValue;
+            parseInt(bodyStyles.getPropertyValue('--axiom-gap')) || 180;
+        axiomGap.value = defaultValue;
     }
 
-    const axiomTextMargin = document.getElementById('axiom-text-margin');
-    if (axiomTextMargin && !localStorage.getItem('axiomTextMargin')) {
+    const axiomTextOffset = document.getElementById('axiom-text-offset');
+    if (axiomTextOffset && !localStorage.getItem('axiomTextOffset')) {
         const defaultValue =
-            parseInt(bodyStyles.getPropertyValue('--axiom-text-margin')) || -16;
-        axiomTextMargin.value = defaultValue;
+            parseInt(bodyStyles.getPropertyValue('--axiom-text-offset')) || -16;
+        axiomTextOffset.value = defaultValue;
     }
 });

@@ -131,7 +131,7 @@ header h1 {
 
 .axiom {
     display: grid;
-    grid-template-columns: var(--axiom-grid-column-1) var(--axiom-grid-column-2);
+    grid-template-columns: var(--axiom-gap) var(--axiom-grid-column-2);
 }
 
 .axiom h2 {
@@ -148,5 +148,5 @@ header h1 {
     font-size: var(--body-size);
     margin: 0;
     opacity: 0.85;
-    margin-top: var(--axiom-text-margin);
+    margin-top: var(--axiom-text-offset);
 }

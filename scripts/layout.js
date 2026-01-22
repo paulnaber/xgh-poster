@@ -18,8 +18,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const axiomGapColumn = document.getElementById('axiom-gap-column');
 
     // Axiom item controls
-    const axiomGridColumn1 = document.getElementById('axiom-grid-column-1');
-    const axiomTextMargin = document.getElementById('axiom-text-margin');
+    const axiomGap = document.getElementById('axiom-gap');
+    const axiomTextOffset = document.getElementById('axiom-text-offset');
 
     // Poster padding event listeners
     if (posterPaddingTop) {
@@ -114,25 +114,22 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // Axiom grid column 1 event listener
-    if (axiomGridColumn1) {
-        axiomGridColumn1.addEventListener('input', function () {
-            document.body.style.setProperty(
-                '--axiom-grid-column-1',
-                this.value + 'px'
-            );
-            localStorage.setItem('axiomGridColumn1', this.value);
+    // Axiom gap event listener
+    if (axiomGap) {
+        axiomGap.addEventListener('input', function () {
+            document.body.style.setProperty('--axiom-gap', this.value + 'px');
+            localStorage.setItem('axiomGap', this.value);
         });
     }
 
-    // Axiom text margin event listener
-    if (axiomTextMargin) {
-        axiomTextMargin.addEventListener('input', function () {
+    // Axiom text offset event listener
+    if (axiomTextOffset) {
+        axiomTextOffset.addEventListener('input', function () {
             document.body.style.setProperty(
-                '--axiom-text-margin',
-                this.value + 'px'
+                '--axiom-text-offset',
+                axiomTextOffset.value + 'px'
             );
-            localStorage.setItem('axiomTextMargin', this.value);
+            localStorage.setItem('axiomTextOffset', this.value);
         });
     }
 
@@ -146,8 +143,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const savedAxiomsGridColumns = localStorage.getItem('axiomsGridColumns');
     const savedAxiomGapRow = localStorage.getItem('axiomGapRow');
     const savedAxiomGapColumn = localStorage.getItem('axiomGapColumn');
-    const savedAxiomGridColumn1 = localStorage.getItem('axiomGridColumn1');
-    const savedAxiomTextMargin = localStorage.getItem('axiomTextMargin');
+    const savedAxiomGap = localStorage.getItem('axiomGap');
+    const savedAxiomTextOffset = localStorage.getItem('axiomTextOffset');
 
     if (savedPaddingTop) {
         posterPaddingTop.value = savedPaddingTop;
@@ -218,19 +215,16 @@ document.addEventListener('DOMContentLoaded', function () {
         );
     }
 
-    if (savedAxiomGridColumn1) {
-        axiomGridColumn1.value = savedAxiomGridColumn1;
-        document.body.style.setProperty(
-            '--axiom-grid-column-1',
-            savedAxiomGridColumn1 + 'px'
-        );
+    if (savedAxiomGap) {
+        axiomGap.value = savedAxiomGap;
+        document.body.style.setProperty('--axiom-gap', savedAxiomGap + 'px');
     }
 
-    if (savedAxiomTextMargin) {
-        axiomTextMargin.value = savedAxiomTextMargin;
+    if (savedAxiomTextOffset) {
+        axiomTextOffset.value = savedAxiomTextOffset;
         document.body.style.setProperty(
-            '--axiom-text-margin',
-            savedAxiomTextMargin + 'px'
+            '--axiom-text-offset',
+            savedAxiomTextOffset + 'px'
         );
     }
 });

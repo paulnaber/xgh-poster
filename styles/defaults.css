@@ -49,8 +49,8 @@ body {
     --headline-margin: 170px;
     --axiom-gap-row: 2cm;
     --axiom-gap-column: 4cm;
-    --axiom-text-margin: -16px;
-    --axiom-grid-column-1: 180px;
+    --axiom-text-offset: -16px;
+    --axiom-gap: 180px;
     --axiom-grid-column-2: auto;
     --axioms-grid-columns: 2;
 }
