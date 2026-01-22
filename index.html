@@ -4,18 +4,14 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>XGH Poster</title>
-        <link rel="stylesheet" href="styles/style.css" id="stylesheet" />
+        <link rel="stylesheet" href="styles/layout-1.css" id="stylesheet" />
         <link rel="stylesheet" href="styles/controls.css" />
     </head>
     <body>
         <div class="css-switcher no-zoom">
             <label for="style-selector">Style:</label>
             <select id="style-selector">
-                <option value="styles/styles-1.css">Style 1</option>
-                <option value="styles/styles-2.css">Style 2</option>
-                <option value="styles/styles-3.css">Style 3</option>
-                <option value="styles/styles-4.css">Style 4</option>
-                <option value="styles/no-css.css">No Style</option>
+                <option value="styles/layout-1.css">Layout 1</option>
             </select>
         </div>
         <div class="zoom-controls no-zoom">
@@ -29,6 +25,168 @@
                 step="1"
             />
             <span class="zoom-value">100%</span>
+        </div>
+        <div class="color-picker no-zoom">
+            <label>Colors:</label>
+            <div class="color-grid">
+                <div class="color-group">
+                    <span class="color-label">Background:</span>
+                    <div class="color-options" data-property="--black">
+                        <button
+                            class="color-btn"
+                            data-color="#000"
+                            style="background: #000"
+                            title="Black"
+                        ></button>
+                        <button
+                            class="color-btn"
+                            data-color="#fff"
+                            style="background: #fff"
+                            title="White"
+                        ></button>
+                        <button
+                            class="color-btn"
+                            data-color="#c00"
+                            style="background: #c00"
+                            title="Red"
+                        ></button>
+                        <button
+                            class="color-btn"
+                            data-color="#fffb00eb"
+                            style="background: #fffb00eb"
+                            title="Yellow"
+                        ></button>
+                        <button
+                            class="color-btn"
+                            data-color="#00c8ffeb"
+                            style="background: #00c8ffeb"
+                            title="Cyan"
+                        ></button>
+                    </div>
+                </div>
+                <div class="color-group">
+                    <span class="color-label">Text:</span>
+                    <div
+                        class="color-options"
+                        data-property="--white-translucent"
+                    >
+                        <button
+                            class="color-btn"
+                            data-color="#ffffffe3"
+                            style="background: #ffffffe3"
+                            title="White Translucent"
+                        ></button>
+                        <button
+                            class="color-btn"
+                            data-color="#000"
+                            style="background: #000"
+                            title="Black"
+                        ></button>
+                        <button
+                            class="color-btn"
+                            data-color="#fff"
+                            style="background: #fff"
+                            title="White"
+                        ></button>
+                        <button
+                            class="color-btn"
+                            data-color="#c00"
+                            style="background: #c00"
+                            title="Red"
+                        ></button>
+                    </div>
+                </div>
+                <div class="color-group">
+                    <span class="color-label">Highlight:</span>
+                    <div class="color-options" data-property="--highlight">
+                        <button
+                            class="color-btn"
+                            data-color="#fffb00eb"
+                            style="background: #fffb00eb"
+                            title="Yellow"
+                        ></button>
+                        <button
+                            class="color-btn"
+                            data-color="#00c8ffeb"
+                            style="background: #00c8ffeb"
+                            title="Cyan"
+                        ></button>
+                        <button
+                            class="color-btn"
+                            data-color="#c00"
+                            style="background: #c00"
+                            title="Red"
+                        ></button>
+                        <button
+                            class="color-btn"
+                            data-color="#fff"
+                            style="background: #fff"
+                            title="White"
+                        ></button>
+                    </div>
+                </div>
+                <div class="color-group">
+                    <span class="color-label">Headline XGH:</span>
+                    <div class="color-options" data-property="--headline-xgh">
+                        <button
+                            class="color-btn"
+                            data-color="#fffb00eb"
+                            style="background: #fffb00eb"
+                            title="Yellow"
+                        ></button>
+                        <button
+                            class="color-btn"
+                            data-color="#00c8ffeb"
+                            style="background: #00c8ffeb"
+                            title="Cyan"
+                        ></button>
+                        <button
+                            class="color-btn"
+                            data-color="#c00"
+                            style="background: #c00"
+                            title="Red"
+                        ></button>
+                        <button
+                            class="color-btn"
+                            data-color="#fff"
+                            style="background: #fff"
+                            title="White"
+                        ></button>
+                    </div>
+                </div>
+                <div class="color-group">
+                    <span class="color-label">Icon Fill:</span>
+                    <div class="color-options" data-target="icon">
+                        <button
+                            class="icon-fill-btn"
+                            data-filter="brightness(2) sepia(1) saturate(10) hue-rotate(0deg)"
+                            title="Yellow"
+                        >
+                            <svg width="24" height="24" viewBox="0 0 24 24">
+                                <rect width="24" height="24" fill="#fffb00" />
+                            </svg>
+                        </button>
+                        <button
+                            class="icon-fill-btn"
+                            data-filter="none"
+                            title="Original"
+                        >
+                            <svg width="24" height="24" viewBox="0 0 24 24">
+                                <rect width="24" height="24" fill="#fff" />
+                            </svg>
+                        </button>
+                        <button
+                            class="icon-fill-btn"
+                            data-filter="brightness(1.5) sepia(1) saturate(5) hue-rotate(155deg) brightness(1.1)"
+                            title="Cyan"
+                        >
+                            <svg width="24" height="24" viewBox="0 0 24 24">
+                                <rect width="24" height="24" fill="#00c8ff" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="container">
             <div class="poster">
@@ -395,6 +553,107 @@
                 const value = this.value;
                 applyZoom(value);
                 localStorage.setItem('zoomLevel', value);
+            });
+
+            // Color picker functionality
+            const colorButtons = document.querySelectorAll('.color-btn');
+
+            // Load saved colors from localStorage
+            const savedColors = JSON.parse(
+                localStorage.getItem('customColors') || '{}'
+            );
+            Object.entries(savedColors).forEach(([property, color]) => {
+                document.body.style.setProperty(property, color);
+                updateActiveButton(property, color);
+            });
+
+            // Update active button state
+            function updateActiveButton(property, color) {
+                const group = document.querySelector(
+                    `[data-property="${property}"]`
+                );
+                if (group) {
+                    group.querySelectorAll('.color-btn').forEach((btn) => {
+                        btn.classList.remove('active');
+                        if (btn.dataset.color === color) {
+                            btn.classList.add('active');
+                        }
+                    });
+                }
+            }
+
+            // Color button click handler
+            colorButtons.forEach((button) => {
+                button.addEventListener('click', function () {
+                    const color = this.dataset.color;
+                    const property = this.parentElement.dataset.property;
+
+                    // Update CSS custom property
+                    document.body.style.setProperty(property, color);
+
+                    // Update active state
+                    updateActiveButton(property, color);
+
+                    // Save to localStorage
+                    const colors = JSON.parse(
+                        localStorage.getItem('customColors') || '{}'
+                    );
+                    colors[property] = color;
+                    localStorage.setItem(
+                        'customColors',
+                        JSON.stringify(colors)
+                    );
+                });
+            });
+
+            // Icon fill functionality
+            const iconFillButtons = document.querySelectorAll('.icon-fill-btn');
+            const logoImage = document.querySelector('.logo');
+
+            // Load saved icon filter from localStorage
+            const savedFilter = localStorage.getItem('iconFilter');
+            if (savedFilter) {
+                logoImage.style.filter = savedFilter;
+                if (savedFilter !== 'none') {
+                    logoImage.style.opacity = savedFilter.includes('155deg')
+                        ? '0.72'
+                        : '0.7';
+                }
+                updateActiveIconButton(savedFilter);
+            }
+
+            // Update active icon button state
+            function updateActiveIconButton(filter) {
+                iconFillButtons.forEach((btn) => {
+                    btn.classList.remove('active');
+                    if (btn.dataset.filter === filter) {
+                        btn.classList.add('active');
+                    }
+                });
+            }
+
+            // Icon fill button click handler
+            iconFillButtons.forEach((button) => {
+                button.addEventListener('click', function () {
+                    const filter = this.dataset.filter;
+
+                    // Update logo filter
+                    if (filter === 'none') {
+                        logoImage.style.filter = 'none';
+                        logoImage.style.opacity = '1';
+                    } else {
+                        logoImage.style.filter = filter;
+                        logoImage.style.opacity = filter.includes('155deg')
+                            ? '0.72'
+                            : '0.7';
+                    }
+
+                    // Update active state
+                    updateActiveIconButton(filter);
+
+                    // Save to localStorage
+                    localStorage.setItem('iconFilter', filter);
+                });
             });
         </script>
     </body>
