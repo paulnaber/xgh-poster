@@ -35,7 +35,19 @@ document.addEventListener('DOMContentLoaded', function () {
         '--zoom-scale',
         '--icon-filter',
         '--icon-opacity',
-        '--background-image'
+        '--background-image',
+        '--poster-padding-top',
+        '--poster-padding-right',
+        '--poster-padding-bottom',
+        '--poster-padding-left',
+        '--icon-size',
+        '--headline-margin',
+        '--axiom-gap-row',
+        '--axiom-gap-column',
+        '--axiom-text-margin',
+        '--axiom-grid-column-1',
+        '--axiom-grid-column-2',
+        '--axioms-grid-columns'
     ];
 
     // Get default values from defaults.css

@@ -358,6 +358,80 @@
                 </div>
             </div>
         </div>
+        <div class="layout-controls control-panel collapsed no-zoom">
+            <div class="panel-header">
+                <span class="panel-title">Layout</span>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <div class="panel-content">
+                <div class="layout-section">
+                    <h4 class="section-title">Poster Padding</h4>
+                    <div class="layout-control">
+                        <label for="poster-padding-top">Top:</label>
+                        <input type="number" id="poster-padding-top" value="250" min="0" max="1000" step="10" />
+                        <span class="unit">px</span>
+                    </div>
+                    <div class="layout-control">
+                        <label for="poster-padding-right">Right:</label>
+                        <input type="number" id="poster-padding-right" value="300" min="0" max="1000" step="10" />
+                        <span class="unit">px</span>
+                    </div>
+                    <div class="layout-control">
+                        <label for="poster-padding-bottom">Bottom:</label>
+                        <input type="number" id="poster-padding-bottom" value="250" min="0" max="1000" step="10" />
+                        <span class="unit">px</span>
+                    </div>
+                    <div class="layout-control">
+                        <label for="poster-padding-left">Left:</label>
+                        <input type="number" id="poster-padding-left" value="300" min="0" max="1000" step="10" />
+                        <span class="unit">px</span>
+                    </div>
+                </div>
+                <div class="layout-section">
+                    <h4 class="section-title">Icon & Spacing</h4>
+                    <div class="layout-control">
+                        <label for="icon-size">Icon Size:</label>
+                        <input type="number" id="icon-size" value="500" min="100" max="1000" step="10" />
+                        <span class="unit">px</span>
+                    </div>
+                    <div class="layout-control">
+                        <label for="headline-margin">Headline Margin:</label>
+                        <input type="number" id="headline-margin" value="170" min="0" max="500" step="10" />
+                        <span class="unit">px</span>
+                    </div>
+                </div>
+                <div class="layout-section">
+                    <h4 class="section-title">Axioms Grid</h4>
+                    <div class="layout-control">
+                        <label for="axioms-grid-columns">Grid Columns:</label>
+                        <input type="number" id="axioms-grid-columns" value="2" min="1" max="4" step="1" />
+                    </div>
+                    <div class="layout-control">
+                        <label for="axiom-gap-row">Gap Row:</label>
+                        <input type="number" id="axiom-gap-row" value="2" min="0" max="10" step="0.1" />
+                        <span class="unit">cm</span>
+                    </div>
+                    <div class="layout-control">
+                        <label for="axiom-gap-column">Gap Column:</label>
+                        <input type="number" id="axiom-gap-column" value="4" min="0" max="10" step="0.1" />
+                        <span class="unit">cm</span>
+                    </div>
+                </div>
+                <div class="layout-section">
+                    <h4 class="section-title">Axiom Item</h4>
+                    <div class="layout-control">
+                        <label for="axiom-grid-column-1">Number Width:</label>
+                        <input type="number" id="axiom-grid-column-1" value="180" min="50" max="500" step="10" />
+                        <span class="unit">px</span>
+                    </div>
+                    <div class="layout-control">
+                        <label for="axiom-text-margin">Text Margin:</label>
+                        <input type="number" id="axiom-text-margin" value="-16" min="-100" max="100" step="1" />
+                        <span class="unit">px</span>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="container">
             <div class="poster">
                 <div class="logo-container">
@@ -709,5 +783,6 @@
         <script src="scripts/gradient.js"></script>
         <script src="scripts/font-switcher.js"></script>
         <script src="scripts/background-switcher.js"></script>
+        <script src="scripts/layout.js"></script>
     </body>
 </html>

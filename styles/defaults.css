@@ -39,4 +39,18 @@ body {
 
     /* Background configuration */
     --background-image: url('../images/solid-painted-concrete-wall-textured-backdrop.jpg');
+
+    /* Layout configuration */
+    --poster-padding-top: 250px;
+    --poster-padding-right: 300px;
+    --poster-padding-bottom: 250px;
+    --poster-padding-left: 300px;
+    --icon-size: 500px;
+    --headline-margin: 170px;
+    --axiom-gap-row: 2cm;
+    --axiom-gap-column: 4cm;
+    --axiom-text-margin: -16px;
+    --axiom-grid-column-1: 180px;
+    --axiom-grid-column-2: auto;
+    --axioms-grid-columns: 2;
 }

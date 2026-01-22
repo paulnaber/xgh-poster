@@ -115,4 +115,89 @@ document.addEventListener('DOMContentLoaded', function () {
             "'baskerville', serif";
         bodyFont.value = defaultValue;
     }
+
+    // Initialize layout controls
+    const posterPaddingTop = document.getElementById('poster-padding-top');
+    if (posterPaddingTop && !localStorage.getItem('posterPaddingTop')) {
+        const defaultValue =
+            parseInt(bodyStyles.getPropertyValue('--poster-padding-top')) ||
+            250;
+        posterPaddingTop.value = defaultValue;
+    }
+
+    const posterPaddingRight = document.getElementById('poster-padding-right');
+    if (posterPaddingRight && !localStorage.getItem('posterPaddingRight')) {
+        const defaultValue =
+            parseInt(bodyStyles.getPropertyValue('--poster-padding-right')) ||
+            300;
+        posterPaddingRight.value = defaultValue;
+    }
+
+    const posterPaddingBottom = document.getElementById(
+        'poster-padding-bottom'
+    );
+    if (posterPaddingBottom && !localStorage.getItem('posterPaddingBottom')) {
+        const defaultValue =
+            parseInt(bodyStyles.getPropertyValue('--poster-padding-bottom')) ||
+            250;
+        posterPaddingBottom.value = defaultValue;
+    }
+
+    const posterPaddingLeft = document.getElementById('poster-padding-left');
+    if (posterPaddingLeft && !localStorage.getItem('posterPaddingLeft')) {
+        const defaultValue =
+            parseInt(bodyStyles.getPropertyValue('--poster-padding-left')) ||
+            300;
+        posterPaddingLeft.value = defaultValue;
+    }
+
+    const iconSize = document.getElementById('icon-size');
+    if (iconSize && !localStorage.getItem('iconSize')) {
+        const defaultValue =
+            parseInt(bodyStyles.getPropertyValue('--icon-size')) || 500;
+        iconSize.value = defaultValue;
+    }
+
+    const headlineMargin = document.getElementById('headline-margin');
+    if (headlineMargin && !localStorage.getItem('headlineMargin')) {
+        const defaultValue =
+            parseInt(bodyStyles.getPropertyValue('--headline-margin')) || 170;
+        headlineMargin.value = defaultValue;
+    }
+
+    const axiomsGridColumns = document.getElementById('axioms-grid-columns');
+    if (axiomsGridColumns && !localStorage.getItem('axiomsGridColumns')) {
+        const defaultValue =
+            parseInt(bodyStyles.getPropertyValue('--axioms-grid-columns')) || 2;
+        axiomsGridColumns.value = defaultValue;
+    }
+
+    const axiomGapRow = document.getElementById('axiom-gap-row');
+    if (axiomGapRow && !localStorage.getItem('axiomGapRow')) {
+        const defaultValue =
+            parseFloat(bodyStyles.getPropertyValue('--axiom-gap-row')) || 2;
+        axiomGapRow.value = defaultValue;
+    }
+
+    const axiomGapColumn = document.getElementById('axiom-gap-column');
+    if (axiomGapColumn && !localStorage.getItem('axiomGapColumn')) {
+        const defaultValue =
+            parseFloat(bodyStyles.getPropertyValue('--axiom-gap-column')) || 4;
+        axiomGapColumn.value = defaultValue;
+    }
+
+    const axiomGridColumn1 = document.getElementById('axiom-grid-column-1');
+    if (axiomGridColumn1 && !localStorage.getItem('axiomGridColumn1')) {
+        const defaultValue =
+            parseInt(bodyStyles.getPropertyValue('--axiom-grid-column-1')) ||
+            180;
+        axiomGridColumn1.value = defaultValue;
+    }
+
+    const axiomTextMargin = document.getElementById('axiom-text-margin');
+    if (axiomTextMargin && !localStorage.getItem('axiomTextMargin')) {
+        const defaultValue =
+            parseInt(bodyStyles.getPropertyValue('--axiom-text-margin')) || -16;
+        axiomTextMargin.value = defaultValue;
+    }
 });

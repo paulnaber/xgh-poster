@@ -597,3 +597,74 @@
 .modal-btn:active {
     transform: scale(0.98);
 }
+
+/* Layout Controls Styles */
+.layout-controls .panel-content {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.layout-section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.layout-section:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.layout-section .section-title {
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    color: #666;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin: 0 0 5px 0;
+}
+
+.layout-control {
+    display: grid;
+    grid-template-columns: 1fr 80px 30px;
+    align-items: center;
+    gap: 8px;
+}
+
+.layout-control label {
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    color: #333;
+    font-weight: 500;
+}
+
+.layout-control input[type='number'] {
+    width: 100%;
+    padding: 6px 8px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    text-align: right;
+    transition: border-color 0.2s ease;
+}
+
+.layout-control input[type='number']:hover {
+    border-color: #999;
+}
+
+.layout-control input[type='number']:focus {
+    outline: none;
+    border-color: #666;
+}
+
+.layout-control .unit {
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    color: #666;
+    font-weight: 500;
+}
