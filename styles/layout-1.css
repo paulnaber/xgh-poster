@@ -16,6 +16,15 @@ body {
     --white-translucent: #ffffffe3;
     --width: 3780px;
     --height: 5292px;
+
+    /* Radial gradient configuration */
+    --gradient-color-r: 0;
+    --gradient-color-g: 0;
+    --gradient-color-b: 0;
+    --gradient-inner-opacity: 0;
+    --gradient-outer-opacity: 0.7;
+    --gradient-inner-percent: 30%;
+    --gradient-outer-percent: 100%;
 }
 
 body {
@@ -76,8 +85,20 @@ body {
     /* The Gradient */
     background: radial-gradient(
         circle,
-        rgba(0, 0, 0, 0) 30%,
-        rgba(0, 0, 0, 0.7) 100%
+        rgba(
+                var(--gradient-color-r),
+                var(--gradient-color-g),
+                var(--gradient-color-b),
+                var(--gradient-inner-opacity)
+            )
+            var(--gradient-inner-percent),
+        rgba(
+                var(--gradient-color-r),
+                var(--gradient-color-g),
+                var(--gradient-color-b),
+                var(--gradient-outer-opacity)
+            )
+            var(--gradient-outer-percent)
     );
 }
 
