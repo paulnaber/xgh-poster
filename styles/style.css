@@ -1,11 +1,11 @@
 @font-face {
     font-family: 'academy';
-    src: url('Academy Engraved LET Fonts.ttf') format('truetype');
+    src: url('../fonts/Academy Engraved LET Fonts.ttf') format('truetype');
 }
 
 @font-face {
     font-family: 'baskerville';
-    src: url('Baskerville.ttc');
+    src: url('../fonts/Baskerville.ttc');
 }
 
 body {
@@ -19,7 +19,7 @@ body {
 }
 
 body {
-    background-color: var(--black);
+    background-color: var(--white);
     color: var(--white-translucent);
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     margin: 0;
@@ -58,7 +58,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url('solid-painted-concrete-wall-textured-backdrop.jpg');
+    background-image: url('../images/solid-painted-concrete-wall-textured-backdrop.jpg');
     background-size: cover;
     background-position: center;
     opacity: 0.3;

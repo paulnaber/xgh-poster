@@ -4,47 +4,26 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>XGH Poster</title>
-        <link rel="stylesheet" href="style.css" id="stylesheet" />
-        <style>
-            .css-switcher {
-                position: fixed;
-                top: 20px;
-                right: 20px;
-                z-index: 1000;
-                background: rgba(255, 255, 255, 0.9);
-                padding: 10px 15px;
-                border-radius: 8px;
-                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-                transform-origin: top right;
-            }
-            .css-switcher label {
-                font-family: Arial, sans-serif;
-                font-size: 14px;
-                margin-right: 8px;
-                font-weight: bold;
-            }
-            .css-switcher select {
-                padding: 5px 10px;
-                border-radius: 4px;
-                border: 1px solid #ccc;
-                font-size: 14px;
-                cursor: pointer;
-                min-width: 100px;
-            }
-        </style>
+        <link rel="stylesheet" href="styles/style.css" id="stylesheet" />
+        <link rel="stylesheet" href="styles/controls.css" />
     </head>
     <body>
         <div class="css-switcher no-zoom">
             <label for="style-selector">Style:</label>
             <select id="style-selector">
-                <option value="style.css">Style 1</option>
-                <option value="styles2.css">Style 2</option>
+                <option value="styles/style.css">Style 1</option>
+                <option value="styles/styles2.css">Style 2</option>
             </select>
+        </div>
+        <div class="zoom-controls no-zoom">
+            <label for="zoom-slider">Zoom:</label>
+            <input type="range" id="zoom-slider" min="10" max="100" value="100" step="1" />
+            <span class="zoom-value">100%</span>
         </div>
         <div class="container">
             <div class="poster">
                 <div class="logo-container">
-                    <img src="xgh-logo.png" alt="XGH Logo" class="logo" />
+                    <img src="images/xgh-logo.png" alt="XGH Logo" class="logo" />
                 </div>
                 <header>
                     <h1>
@@ -375,6 +354,33 @@
                 const newStyle = this.value;
                 stylesheet.href = newStyle;
                 localStorage.setItem('selectedStyle', newStyle);
+            });
+
+            // Zoom slider functionality
+            const zoomSlider = document.getElementById('zoom-slider');
+            const zoomValue = document.querySelector('.zoom-value');
+            const container = document.querySelector('.container');
+
+            // Load saved zoom from localStorage
+            const savedZoom = localStorage.getItem('zoomLevel');
+            if (savedZoom) {
+                zoomSlider.value = savedZoom;
+                applyZoom(savedZoom);
+            }
+
+            // Apply zoom function
+            function applyZoom(value) {
+                const scale = value / 100;
+                container.style.transform = `scale(${scale})`;
+                container.style.transformOrigin = 'top left';
+                zoomValue.textContent = value + '%';
+            }
+
+            // Zoom slider event listener
+            zoomSlider.addEventListener('input', function () {
+                const value = this.value;
+                applyZoom(value);
+                localStorage.setItem('zoomLevel', value);
             });
         </script>
     </body>

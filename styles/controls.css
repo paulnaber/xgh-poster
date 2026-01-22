@@ -1,0 +1,63 @@
+.css-switcher {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 10px 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transform-origin: top right;
+}
+
+.css-switcher label {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    margin-right: 8px;
+    font-weight: bold;
+    color: black;
+}
+
+.css-switcher select {
+    padding: 5px 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    cursor: pointer;
+    min-width: 100px;
+}
+
+.zoom-controls {
+    position: fixed;
+    top: 70px;
+    right: 20px;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 10px 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transform-origin: top right;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.zoom-controls label {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    color: black;
+}
+
+.zoom-controls input[type='range'] {
+    width: 150px;
+    cursor: pointer;
+}
+
+.zoom-controls .zoom-value {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    min-width: 45px;
+    text-align: right;
+    color: black;
+}
