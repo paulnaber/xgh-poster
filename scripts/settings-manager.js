@@ -47,7 +47,14 @@ document.addEventListener('DOMContentLoaded', function () {
         '--axiom-text-offset',
         '--axiom-gap',
         '--axiom-grid-column-2',
-        '--axioms-grid-columns'
+        '--axioms-grid-columns',
+        '--frame-enabled',
+        '--frame-thickness',
+        '--frame-color',
+        '--frame-distance',
+        '--frame-radius',
+        '--frame-opacity',
+        '--frame-style'
     ];
 
     // Get default values from defaults.css

@@ -199,4 +199,50 @@ document.addEventListener('DOMContentLoaded', function () {
             parseInt(bodyStyles.getPropertyValue('--axiom-text-offset')) || -16;
         axiomTextOffset.value = defaultValue;
     }
-});
+
+    // Initialize frame controls
+    const frameEnabled = document.getElementById('frame-enabled');
+    if (frameEnabled && localStorage.getItem('frame-enabled') === null) {
+        const defaultValue =
+            parseFloat(bodyStyles.getPropertyValue('--frame-enabled')) || 0;
+        frameEnabled.checked = defaultValue === 1;
+    }
+
+    const frameThickness = document.getElementById('frame-thickness');
+    if (frameThickness && !localStorage.getItem('frame-thickness')) {
+        const defaultValue =
+            parseInt(bodyStyles.getPropertyValue('--frame-thickness')) || 20;
+        frameThickness.value = defaultValue;
+    }
+
+    const frameDistance = document.getElementById('frame-distance');
+    if (frameDistance && !localStorage.getItem('frame-distance')) {
+        const defaultValue =
+            parseInt(bodyStyles.getPropertyValue('--frame-distance')) || 40;
+        frameDistance.value = defaultValue;
+    }
+
+    const frameRadius = document.getElementById('frame-radius');
+    if (frameRadius && !localStorage.getItem('frame-radius')) {
+        const defaultValue =
+            parseInt(bodyStyles.getPropertyValue('--frame-radius')) || 0;
+        frameRadius.value = defaultValue;
+    }
+
+    const frameOpacity = document.getElementById('frame-opacity');
+    const frameOpacityValue = document.getElementById('frame-opacity-value');
+    if (frameOpacity && !localStorage.getItem('frame-opacity')) {
+        const defaultValue =
+            parseFloat(bodyStyles.getPropertyValue('--frame-opacity')) || 1;
+        frameOpacity.value = defaultValue;
+        if (frameOpacityValue) {
+            frameOpacityValue.textContent = defaultValue.toFixed(2);
+        }
+    }
+
+    const frameStyle = document.getElementById('frame-style');
+    if (frameStyle && !localStorage.getItem('frame-style')) {
+        const defaultValue =
+            bodyStyles.getPropertyValue('--frame-style').trim() || 'solid';
+        frameStyle.value = defaultValue;
+    }

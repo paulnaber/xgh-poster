@@ -426,6 +426,59 @@
                 </div>
             </div>
         </div>
+        <div class="frame-controls control-panel collapsed no-zoom">
+            <div class="panel-header">
+                <span class="panel-title">Frame</span>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <div class="panel-content">
+                <div class="frame-section">
+                    <div class="frame-control">
+                        <label for="frame-enabled">Enable Frame:</label>
+                        <input type="checkbox" id="frame-enabled" checked />
+                    </div>
+                    <div class="frame-control">
+                        <label for="frame-thickness">Thickness:</label>
+                        <input type="number" id="frame-thickness" value="5" min="1" max="200" step="1" />
+                        <span class="unit">px</span>
+                    </div>
+                    <div class="frame-control">
+                        <label for="frame-distance">Distance:</label>
+                        <input type="number" id="frame-distance" value="120" min="0" max="500" step="5" />
+                        <span class="unit">px</span>
+                    </div>
+                    <div class="frame-control">
+                        <label for="frame-radius">Corner Radius:</label>
+                        <input type="number" id="frame-radius" value="0" min="0" max="100" step="1" />
+                        <span class="unit">px</span>
+                    </div>
+                    <div class="frame-control">
+                        <label for="frame-opacity">Opacity:</label>
+                        <input type="range" id="frame-opacity" min="0" max="1" step="0.01" value="1" />
+                        <span id="frame-opacity-value" class="value-display">1.00</span>
+                    </div>
+                    <div class="frame-control">
+                        <label for="frame-style">Style:</label>
+                        <select id="frame-style">
+                            <option value="solid">Solid</option>
+                            <option value="dashed">Dashed</option>
+                            <option value="dotted">Dotted</option>
+                            <option value="double">Double</option>
+                        </select>
+                    </div>
+                    <div class="frame-control">
+                        <label>Color:</label>
+                        <div class="color-options" data-target="frame">
+                            <button class="frame-color-btn" data-color="#fff" style="background: #fff" title="White"></button>
+                            <button class="frame-color-btn" data-color="#000" style="background: #000" title="Black"></button>
+                            <button class="frame-color-btn" data-color="#fffb00eb" style="background: #fffb00eb" title="Yellow"></button>
+                            <button class="frame-color-btn" data-color="#00c8ffeb" style="background: #00c8ffeb" title="Cyan"></button>
+                            <button class="frame-color-btn" data-color="#c00" style="background: #c00" title="Red"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="settings-controls control-panel collapsed no-zoom">
             <div class="panel-header">
                 <span class="panel-title">Settings</span>
@@ -440,6 +493,7 @@
         </div>
         <div class="container">
             <div class="poster">
+                <div class="background-layer"></div>
                 <div class="logo-container">
                     <img
                         src="images/xgh-logo.png"
@@ -790,5 +844,6 @@
         <script src="scripts/font-switcher.js"></script>
         <script src="scripts/background-switcher.js"></script>
         <script src="scripts/layout.js"></script>
+        <script src="scripts/frame.js"></script>
     </body>
 </html>

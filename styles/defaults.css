@@ -54,4 +54,13 @@ body {
     --axiom-grid-column-2: auto;
     --axioms-grid-columns: 2;
     --axioms-column-flow: false;
+
+    /* Frame configuration */
+    --frame-enabled: 1;
+    --frame-thickness: 5px;
+    --frame-color: #fff;
+    --frame-distance: 120px;
+    --frame-radius: 0px;
+    --frame-style: solid;
+    --frame-opacity: 1;
 }

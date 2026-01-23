@@ -44,7 +44,24 @@ body {
     /* border: 4px solid var(--white); */
 }
 
+/* Frame overlay - rendered on top of poster content */
 .poster::before {
+    content: '';
+    position: absolute;
+    top: var(--frame-distance);
+    left: var(--frame-distance);
+    right: var(--frame-distance);
+    bottom: var(--frame-distance);
+    border: var(--frame-thickness) var(--frame-style) var(--frame-color);
+    border-radius: var(--frame-radius);
+    opacity: calc(var(--frame-enabled) * var(--frame-opacity));
+    z-index: 10;
+    pointer-events: none;
+    box-sizing: border-box;
+}
+
+/* Background image */
+.poster .background-layer {
     content: '';
     position: absolute;
     top: 0;
@@ -59,6 +76,7 @@ body {
     pointer-events: none;
 }
 
+/* Gradient layer */
 .poster::after {
     content: '';
     position: absolute;
