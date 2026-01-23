@@ -97,7 +97,7 @@ document.addEventListener('DOMContentLoaded', function () {
         axiomGapRow.addEventListener('input', function () {
             document.body.style.setProperty(
                 '--axiom-gap-row',
-                this.value + 'cm'
+                this.value + 'px'
             );
             localStorage.setItem('axiomGapRow', this.value);
         });
@@ -108,7 +108,7 @@ document.addEventListener('DOMContentLoaded', function () {
         axiomGapColumn.addEventListener('input', function () {
             document.body.style.setProperty(
                 '--axiom-gap-column',
-                this.value + 'cm'
+                this.value + 'px'
             );
             localStorage.setItem('axiomGapColumn', this.value);
         });
@@ -203,7 +203,7 @@ document.addEventListener('DOMContentLoaded', function () {
         axiomGapRow.value = savedAxiomGapRow;
         document.body.style.setProperty(
             '--axiom-gap-row',
-            savedAxiomGapRow + 'cm'
+            savedAxiomGapRow + 'px'
         );
     }
 
@@ -211,7 +211,7 @@ document.addEventListener('DOMContentLoaded', function () {
         axiomGapColumn.value = savedAxiomGapColumn;
         document.body.style.setProperty(
             '--axiom-gap-column',
-            savedAxiomGapColumn + 'cm'
+            savedAxiomGapColumn + 'px'
         );
     }
 

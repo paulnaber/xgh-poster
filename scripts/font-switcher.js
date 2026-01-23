@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Apply axiom number size
     axiomNumberSize.addEventListener('input', function () {
         const size = this.value;
-        document.body.style.setProperty('--axiom-number-size', size + 'pt');
+        document.body.style.setProperty('--axiom-number-size', size + 'px');
     });
 
     // Apply body text font
@@ -40,6 +40,6 @@ document.addEventListener('DOMContentLoaded', function () {
     // Apply body text size
     bodySize.addEventListener('input', function () {
         const size = this.value;
-        document.body.style.setProperty('--body-size', size + 'pt');
+        document.body.style.setProperty('--body-size', size + 'px');
     });
 });
