@@ -53,4 +53,5 @@ body {
     --axiom-gap: 180px;
     --axiom-grid-column-2: auto;
     --axioms-grid-columns: 2;
+    --axioms-column-flow: false;
 }

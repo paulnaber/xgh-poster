@@ -122,6 +122,7 @@ header h1 {
     opacity: var(--icon-opacity);
 }
 
+/* Default: Grid flow layout */
 .axioms {
     display: grid;
     grid-template-columns: repeat(var(--axioms-grid-columns), 1fr);
@@ -132,6 +133,19 @@ header h1 {
 .axiom {
     display: grid;
     grid-template-columns: var(--axiom-gap) var(--axiom-grid-column-2);
+}
+
+/* Override: Column flow layout when enabled */
+body[style*='--axioms-column-flow: true'] .axioms {
+    display: block;
+    columns: var(--axioms-grid-columns);
+    column-gap: var(--axiom-gap-column);
+    width: 100%;
+}
+
+body[style*='--axioms-column-flow: true'] .axiom {
+    break-inside: avoid;
+    margin-bottom: var(--axiom-gap-row);
 }
 
 .axiom h2 {

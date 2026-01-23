@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const headlineMargin = document.getElementById('headline-margin');
 
     // Axioms grid controls
+    const axiomsColumnFlow = document.getElementById('axioms-column-flow');
     const axiomsGridColumns = document.getElementById('axioms-grid-columns');
     const axiomGapRow = document.getElementById('axiom-gap-row');
     const axiomGapColumn = document.getElementById('axiom-gap-column');
@@ -81,6 +82,17 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
+    // Axioms column flow event listener
+    if (axiomsColumnFlow) {
+        axiomsColumnFlow.addEventListener('change', function () {
+            document.body.style.setProperty(
+                '--axioms-column-flow',
+                this.checked
+            );
+            localStorage.setItem('axiomsColumnFlow', this.checked);
+        });
+    }
+
     // Axioms grid columns event listener
     if (axiomsGridColumns) {
         axiomsGridColumns.addEventListener('input', function () {
@@ -140,6 +152,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const savedPaddingLeft = localStorage.getItem('posterPaddingLeft');
     const savedIconSize = localStorage.getItem('iconSize');
     const savedHeadlineMargin = localStorage.getItem('headlineMargin');
+    const savedAxiomsColumnFlow = localStorage.getItem('axiomsColumnFlow');
     const savedAxiomsGridColumns = localStorage.getItem('axiomsGridColumns');
     const savedAxiomGapRow = localStorage.getItem('axiomGapRow');
     const savedAxiomGapColumn = localStorage.getItem('axiomGapColumn');
@@ -188,6 +201,14 @@ document.addEventListener('DOMContentLoaded', function () {
         document.body.style.setProperty(
             '--headline-margin',
             savedHeadlineMargin + 'px'
+        );
+    }
+
+    if (savedAxiomsColumnFlow !== null) {
+        axiomsColumnFlow.checked = savedAxiomsColumnFlow === 'true';
+        document.body.style.setProperty(
+            '--axioms-column-flow',
+            savedAxiomsColumnFlow === 'true'
         );
     }
 
