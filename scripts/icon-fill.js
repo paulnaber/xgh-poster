@@ -4,14 +4,28 @@ const iconColorPicker = document.querySelector('.icon-color-picker');
 
 // Load saved icon color from localStorage or use default (first predefined color)
 let savedIconColor = localStorage.getItem('iconColor');
+let savedIconFilter = localStorage.getItem('iconFilter');
+
 if (!savedIconColor) {
     // Set default to first predefined color
     const firstIconBtn = document.querySelector('.icon-fill-btn');
-    savedIconColor = firstIconBtn ? firstIconBtn.dataset.color : '#fffb00';
-    localStorage.setItem('iconColor', savedIconColor);
+    if (firstIconBtn) {
+        savedIconColor = firstIconBtn.dataset.color;
+        savedIconFilter = firstIconBtn.dataset.filter;
+        localStorage.setItem('iconColor', savedIconColor);
+        localStorage.setItem('iconFilter', savedIconFilter);
+    } else {
+        savedIconColor = '#fffb00';
+    }
 }
 
-applyIconColor(savedIconColor);
+if (savedIconFilter) {
+    document.body.style.setProperty('--icon-filter', savedIconFilter);
+} else {
+    applyIconColor(savedIconColor);
+}
+
+document.body.style.setProperty('--icon-color', savedIconColor);
 updateActiveIconButton(savedIconColor);
 if (iconColorPicker) {
     iconColorPicker.value = savedIconColor;
@@ -43,24 +57,91 @@ function updateActiveIconButton(color) {
     }
 }
 
-// Apply icon color using CSS custom property
+// Apply icon color using CSS filter to colorize the image
 function applyIconColor(color) {
     document.body.style.setProperty('--icon-color', color);
+
+    // Convert hex color to HSL for filter generation
+    const filter = hexToFilter(color);
+    document.body.style.setProperty('--icon-filter', filter);
+}
+
+// Convert hex color to CSS filter that approximates the color
+function hexToFilter(hex) {
+    // Remove # if present
+    hex = hex.replace('#', '');
+
+    // Convert to RGB (0-255)
+    const r = parseInt(hex.substr(0, 2), 16);
+    const g = parseInt(hex.substr(2, 2), 16);
+    const b = parseInt(hex.substr(4, 2), 16);
+
+    // For white or near-white
+    if (r > 230 && g > 230 && b > 230) {
+        return 'brightness(0) invert(1)';
+    }
+
+    // For black or near-black
+    if (r < 25 && g < 25 && b < 25) {
+        return 'brightness(0)';
+    }
+
+    // Convert RGB to HSL
+    const rNorm = r / 255;
+    const gNorm = g / 255;
+    const bNorm = b / 255;
+
+    const max = Math.max(rNorm, gNorm, bNorm);
+    const min = Math.min(rNorm, gNorm, bNorm);
+    const delta = max - min;
+
+    let hue = 0;
+    if (delta !== 0) {
+        if (max === rNorm) {
+            hue = ((gNorm - bNorm) / delta) % 6;
+        } else if (max === gNorm) {
+            hue = (bNorm - rNorm) / delta + 2;
+        } else {
+            hue = (rNorm - gNorm) / delta + 4;
+        }
+        hue = Math.round(hue * 60);
+        if (hue < 0) hue += 360;
+    }
+
+    const lightness = (max + min) / 2;
+    const saturation =
+        delta === 0 ? 0 : delta / (1 - Math.abs(2 * lightness - 1));
+
+    // Build filter chain to transform from base yellow (#fffb00) to target color
+    // Base yellow has hue ~60deg
+    const hueRotate = hue - 60;
+
+    // Adjust saturation (base is already quite saturated)
+    const saturateValue = Math.max(1, saturation * 10);
+
+    // Adjust brightness based on lightness
+    const brightnessValue = lightness * 2;
+
+    // Use sepia as base for color transformation
+    return `brightness(${brightnessValue}) sepia(1) saturate(${saturateValue}) hue-rotate(${hueRotate}deg)`;
 }
 
 // Icon fill button click handler
 iconFillButtons.forEach((button) => {
     button.addEventListener('click', function () {
         const color = this.dataset.color;
+        const filter = this.dataset.filter;
 
-        // Update icon color
-        applyIconColor(color);
+        // Apply the predefined filter
+        document.body.style.setProperty('--icon-filter', filter);
+        document.body.style.setProperty('--icon-color', color);
 
         // Update active state
         updateActiveIconButton(color);
 
         // Save to localStorage
         localStorage.setItem('iconColor', color);
+        localStorage.setItem('iconFilter', filter);
     });
 });
 

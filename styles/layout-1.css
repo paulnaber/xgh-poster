@@ -140,14 +140,6 @@ header h1 {
     opacity: var(--icon-opacity);
 }
 
-.logo path,
-.logo polygon,
-.logo rect,
-.logo circle,
-.logo ellipse {
-    fill: var(--icon-color);
-}
-
 /* Default: Grid flow layout */
 .axioms {
     display: grid;
