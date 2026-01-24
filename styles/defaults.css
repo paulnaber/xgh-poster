@@ -50,13 +50,13 @@ body {
     --poster-padding-left: 300px;
     --icon-size: 500px;
     --headline-margin: 170px;
-    --axiom-gap-row: 80px;
+    --axiom-gap-row: 110px;
     --axiom-gap-column: 80px;
     --axiom-text-offset: -16px;
     --axiom-gap: 180px;
     --axiom-grid-column-2: auto;
     --axioms-grid-columns: 2;
-    --axioms-column-flow: false;
+    --axioms-column-flow: true;
 
     /* Frame configuration */
     --frame-enabled: 1;
