@@ -44,12 +44,12 @@ body {
     --background-invert: 0;
 
     /* Layout configuration */
-    --poster-padding-top: 250px;
+    --poster-padding-top: 300px;
     --poster-padding-right: 300px;
     --poster-padding-bottom: 250px;
     --poster-padding-left: 300px;
     --icon-size: 500px;
-    --headline-margin: 170px;
+    --headline-margin: 100px;
     --axiom-gap-row: 110px;
     --axiom-gap-column: 80px;
     --axiom-text-offset: -16px;

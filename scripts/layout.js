@@ -159,11 +159,17 @@ document.addEventListener('DOMContentLoaded', function () {
     const savedAxiomGap = localStorage.getItem('axiomGap');
     const savedAxiomTextOffset = localStorage.getItem('axiomTextOffset');
 
+    const bodyStyles = getComputedStyle(document.body);
+
     if (savedPaddingTop) {
         posterPaddingTop.value = savedPaddingTop;
         document.body.style.setProperty(
             '--poster-padding-top',
             savedPaddingTop + 'px'
+        );
+    } else {
+        posterPaddingTop.value = parseInt(
+            bodyStyles.getPropertyValue('--poster-padding-top')
         );
     }
 
@@ -173,6 +179,10 @@ document.addEventListener('DOMContentLoaded', function () {
             '--poster-padding-right',
             savedPaddingRight + 'px'
         );
+    } else {
+        posterPaddingRight.value = parseInt(
+            bodyStyles.getPropertyValue('--poster-padding-right')
+        );
     }
 
     if (savedPaddingBottom) {
@@ -180,6 +190,10 @@ document.addEventListener('DOMContentLoaded', function () {
         document.body.style.setProperty(
             '--poster-padding-bottom',
             savedPaddingBottom + 'px'
+        );
+    } else {
+        posterPaddingBottom.value = parseInt(
+            bodyStyles.getPropertyValue('--poster-padding-bottom')
         );
     }
 
@@ -189,11 +203,17 @@ document.addEventListener('DOMContentLoaded', function () {
             '--poster-padding-left',
             savedPaddingLeft + 'px'
         );
+    } else {
+        posterPaddingLeft.value = parseInt(
+            bodyStyles.getPropertyValue('--poster-padding-left')
+        );
     }
 
     if (savedIconSize) {
         iconSize.value = savedIconSize;
         document.body.style.setProperty('--icon-size', savedIconSize + 'px');
+    } else {
+        iconSize.value = parseInt(bodyStyles.getPropertyValue('--icon-size'));
     }
 
     if (savedHeadlineMargin) {
@@ -201,6 +221,10 @@ document.addEventListener('DOMContentLoaded', function () {
         document.body.style.setProperty(
             '--headline-margin',
             savedHeadlineMargin + 'px'
+        );
+    } else {
+        headlineMargin.value = parseInt(
+            bodyStyles.getPropertyValue('--headline-margin')
         );
     }
 
@@ -212,7 +236,6 @@ document.addEventListener('DOMContentLoaded', function () {
         );
     } else {
         // Initialize with default value from CSS
-        const bodyStyles = getComputedStyle(document.body);
         const defaultValue =
             bodyStyles.getPropertyValue('--axioms-column-flow').trim() ===
             'true';

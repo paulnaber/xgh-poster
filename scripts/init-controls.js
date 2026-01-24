@@ -121,7 +121,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (posterPaddingTop && !localStorage.getItem('posterPaddingTop')) {
         const defaultValue =
             parseInt(bodyStyles.getPropertyValue('--poster-padding-top')) ||
-            250;
+            300;
         posterPaddingTop.value = defaultValue;
     }
 

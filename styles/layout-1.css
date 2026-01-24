@@ -119,7 +119,7 @@ header h1 {
     font-family: var(--headline-font);
     font-size: var(--headline-size);
     color: var(--white-translucent);
-    opacity: 0.8;
+    opacity: 0.75;
     margin: 0;
 }
 
@@ -180,6 +180,6 @@ body[style*='--axioms-column-flow: true'] .axiom {
     font-family: var(--body-font);
     font-size: var(--body-size);
     margin: 0;
-    opacity: 0.85;
+    opacity: 0.9;
     margin-top: var(--axiom-text-offset);
 }
