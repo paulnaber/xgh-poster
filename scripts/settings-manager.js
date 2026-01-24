@@ -48,6 +48,7 @@ document.addEventListener('DOMContentLoaded', function () {
         '--axiom-gap',
         '--axiom-grid-column-2',
         '--axioms-grid-columns',
+        '--axioms-column-flow',
         '--frame-enabled',
         '--frame-thickness',
         '--frame-color',
@@ -109,6 +110,231 @@ document.addEventListener('DOMContentLoaded', function () {
         return css;
     }
 
+    // Sync UI controls with current CSS properties
+    function syncUIControls() {
+        console.log('Syncing UI controls with CSS properties...');
+        const bodyStyles = getComputedStyle(document.body);
+
+        // Helper to parse pixel values
+        const parsePx = (value) => parseInt(value) || 0;
+        const parseNumber = (value) => parseFloat(value) || 0;
+
+        // Font controls
+        const headlineFont = document.getElementById('headline-font');
+        const headlineSize = document.getElementById('headline-size');
+        const axiomNumberFont = document.getElementById('axiom-number-font');
+        const axiomNumberSize = document.getElementById('axiom-number-size');
+        const bodyFont = document.getElementById('body-font');
+        const bodySize = document.getElementById('body-size');
+
+        if (headlineFont)
+            headlineFont.value = bodyStyles
+                .getPropertyValue('--headline-font')
+                .trim();
+        if (headlineSize)
+            headlineSize.value = parsePx(
+                bodyStyles.getPropertyValue('--headline-size')
+            );
+        if (axiomNumberFont)
+            axiomNumberFont.value = bodyStyles
+                .getPropertyValue('--axiom-number-font')
+                .trim();
+        if (axiomNumberSize)
+            axiomNumberSize.value = parsePx(
+                bodyStyles.getPropertyValue('--axiom-number-size')
+            );
+        if (bodyFont)
+            bodyFont.value = bodyStyles.getPropertyValue('--body-font').trim();
+        if (bodySize)
+            bodySize.value = parsePx(
+                bodyStyles.getPropertyValue('--body-size')
+            );
+
+        // Layout controls
+        const posterPaddingTop = document.getElementById('poster-padding-top');
+        const posterPaddingRight = document.getElementById(
+            'poster-padding-right'
+        );
+        const posterPaddingBottom = document.getElementById(
+            'poster-padding-bottom'
+        );
+        const posterPaddingLeft = document.getElementById(
+            'poster-padding-left'
+        );
+        const iconSize = document.getElementById('icon-size');
+        const headlineMargin = document.getElementById('headline-margin');
+        const axiomsColumnFlow = document.getElementById('axioms-column-flow');
+        const axiomsGridColumns = document.getElementById(
+            'axioms-grid-columns'
+        );
+        const axiomGapRow = document.getElementById('axiom-gap-row');
+        const axiomGapColumn = document.getElementById('axiom-gap-column');
+        const axiomGap = document.getElementById('axiom-gap');
+        const axiomTextOffset = document.getElementById('axiom-text-offset');
+
+        if (posterPaddingTop)
+            posterPaddingTop.value = parsePx(
+                bodyStyles.getPropertyValue('--poster-padding-top')
+            );
+        if (posterPaddingRight)
+            posterPaddingRight.value = parsePx(
+                bodyStyles.getPropertyValue('--poster-padding-right')
+            );
+        if (posterPaddingBottom)
+            posterPaddingBottom.value = parsePx(
+                bodyStyles.getPropertyValue('--poster-padding-bottom')
+            );
+        if (posterPaddingLeft)
+            posterPaddingLeft.value = parsePx(
+                bodyStyles.getPropertyValue('--poster-padding-left')
+            );
+        if (iconSize)
+            iconSize.value = parsePx(
+                bodyStyles.getPropertyValue('--icon-size')
+            );
+        if (headlineMargin)
+            headlineMargin.value = parsePx(
+                bodyStyles.getPropertyValue('--headline-margin')
+            );
+        if (axiomsColumnFlow)
+            axiomsColumnFlow.checked =
+                bodyStyles.getPropertyValue('--axioms-column-flow').trim() ===
+                'true';
+        if (axiomsGridColumns)
+            axiomsGridColumns.value = bodyStyles
+                .getPropertyValue('--axioms-grid-columns')
+                .trim();
+        if (axiomGapRow)
+            axiomGapRow.value = parsePx(
+                bodyStyles.getPropertyValue('--axiom-gap-row')
+            );
+        if (axiomGapColumn)
+            axiomGapColumn.value = parsePx(
+                bodyStyles.getPropertyValue('--axiom-gap-column')
+            );
+        if (axiomGap)
+            axiomGap.value = parsePx(
+                bodyStyles.getPropertyValue('--axiom-gap')
+            );
+        if (axiomTextOffset)
+            axiomTextOffset.value = parsePx(
+                bodyStyles.getPropertyValue('--axiom-text-offset')
+            );
+
+        // Gradient controls
+        const gradientColor = document.getElementById('gradient-color');
+        const gradientInnerOpacity = document.getElementById(
+            'gradient-inner-opacity'
+        );
+        const gradientOuterOpacity = document.getElementById(
+            'gradient-outer-opacity'
+        );
+        const gradientInnerPercent = document.getElementById(
+            'gradient-inner-percent'
+        );
+        const gradientOuterPercent = document.getElementById(
+            'gradient-outer-percent'
+        );
+
+        if (gradientColor) {
+            const r = bodyStyles.getPropertyValue('--gradient-color-r').trim();
+            const g = bodyStyles.getPropertyValue('--gradient-color-g').trim();
+            const b = bodyStyles.getPropertyValue('--gradient-color-b').trim();
+            gradientColor.value =
+                '#' +
+                [r, g, b]
+                    .map((x) => parseInt(x).toString(16).padStart(2, '0'))
+                    .join('');
+        }
+        if (gradientInnerOpacity) {
+            gradientInnerOpacity.value = parseNumber(
+                bodyStyles.getPropertyValue('--gradient-inner-opacity')
+            );
+            const display = document.getElementById('inner-opacity-value');
+            if (display) display.textContent = gradientInnerOpacity.value;
+        }
+        if (gradientOuterOpacity) {
+            gradientOuterOpacity.value = parseNumber(
+                bodyStyles.getPropertyValue('--gradient-outer-opacity')
+            );
+            const display = document.getElementById('outer-opacity-value');
+            if (display) display.textContent = gradientOuterOpacity.value;
+        }
+        if (gradientInnerPercent) {
+            gradientInnerPercent.value = parsePx(
+                bodyStyles.getPropertyValue('--gradient-inner-percent')
+            );
+            const display = document.getElementById('inner-percent-value');
+            if (display) display.textContent = gradientInnerPercent.value + '%';
+        }
+        if (gradientOuterPercent) {
+            gradientOuterPercent.value = parsePx(
+                bodyStyles.getPropertyValue('--gradient-outer-percent')
+            );
+            const display = document.getElementById('outer-percent-value');
+            if (display) display.textContent = gradientOuterPercent.value + '%';
+        }
+
+        // Frame controls
+        const frameEnabled = document.getElementById('frame-enabled');
+        const frameThickness = document.getElementById('frame-thickness');
+        const frameDistance = document.getElementById('frame-distance');
+        const frameRadius = document.getElementById('frame-radius');
+        const frameOpacity = document.getElementById('frame-opacity');
+        const frameStyle = document.getElementById('frame-style');
+
+        if (frameEnabled)
+            frameEnabled.checked =
+                bodyStyles.getPropertyValue('--frame-enabled').trim() === '1';
+        if (frameThickness)
+            frameThickness.value = parsePx(
+                bodyStyles.getPropertyValue('--frame-thickness')
+            );
+        if (frameDistance)
+            frameDistance.value = parsePx(
+                bodyStyles.getPropertyValue('--frame-distance')
+            );
+        if (frameRadius)
+            frameRadius.value = parsePx(
+                bodyStyles.getPropertyValue('--frame-radius')
+            );
+        if (frameOpacity) {
+            frameOpacity.value = parseNumber(
+                bodyStyles.getPropertyValue('--frame-opacity')
+            );
+            const display = document.getElementById('frame-opacity-value');
+            if (display) display.textContent = frameOpacity.value.toFixed(2);
+        }
+        if (frameStyle)
+            frameStyle.value = bodyStyles
+                .getPropertyValue('--frame-style')
+                .trim();
+
+        // Background selector
+        const backgroundSelector = document.getElementById(
+            'background-selector'
+        );
+        if (backgroundSelector) {
+            backgroundSelector.value = bodyStyles
+                .getPropertyValue('--background-image')
+                .trim();
+        }
+        zoomSlider = document.getElementById('zoom-slider');
+        if (zoomSlider) {
+            const zoomScale = parseNumber(
+                bodyStyles.getPropertyValue('--zoom-scale')
+            );
+            zoomSlider.value = Math.round(zoomScale * 100);
+            const display = document.querySelector('.zoom-value');
+            if (display) display.textContent = zoomSlider.value + '%';
+        }
+
+        console.log('UI controls synced successfully');
+    }
+
+    // Listen for custom sync event
+    document.addEventListener('syncUIControls', syncUIControls);
+
     // Parse CSS from textarea and apply to body
     function parseCSSAndApply(cssText) {
         try {
@@ -133,6 +359,14 @@ document.addEventListener('DOMContentLoaded', function () {
                 'customCSSProperties',
                 JSON.stringify(newProperties)
             );
+
+            // Sync UI controls to reflect the changes
+            // Use requestAnimationFrame to ensure DOM has updated
+            requestAnimationFrame(() => {
+                setTimeout(() => {
+                    syncUIControls();
+                }, 50);
+            });
 
             return true;
         } catch (error) {
@@ -251,8 +485,20 @@ document.addEventListener('DOMContentLoaded', function () {
             Object.keys(properties).forEach((prop) => {
                 document.body.style.setProperty(prop, properties[prop]);
             });
+            // Sync UI controls after loading saved properties
+            // Use a small delay to ensure all DOM elements are ready
+            setTimeout(() => {
+                syncUIControls();
+            }, 100);
         } catch (error) {
             console.error('Error loading saved properties:', error);
         }
     }
 });
+
+// Expose syncUIControls globally so other scripts can use it if needed
+window.syncUIControls = function () {
+    // Trigger the sync from the settings-manager scope
+    const event = new CustomEvent('syncUIControls');
+    document.dispatchEvent(event);
+};
