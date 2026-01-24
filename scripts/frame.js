@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const frameOpacityValue = document.getElementById('frame-opacity-value');
     const frameStyle = document.getElementById('frame-style');
     const frameColorButtons = document.querySelectorAll('.frame-color-btn');
+    const frameColorPicker = document.querySelector('.frame-color-picker');
 
     // Load saved frame settings from localStorage
     const savedFrameEnabled = localStorage.getItem('frame-enabled');
@@ -16,7 +17,14 @@ document.addEventListener('DOMContentLoaded', function () {
     const savedFrameRadius = localStorage.getItem('frame-radius');
     const savedFrameOpacity = localStorage.getItem('frame-opacity');
     const savedFrameStyle = localStorage.getItem('frame-style');
-    const savedFrameColor = localStorage.getItem('frame-color');
+    let savedFrameColor = localStorage.getItem('frame-color');
+
+    // Initialize default color if none saved
+    if (!savedFrameColor) {
+        const firstFrameBtn = document.querySelector('.frame-color-btn');
+        savedFrameColor = firstFrameBtn ? firstFrameBtn.dataset.color : '#fff';
+        localStorage.setItem('frame-color', savedFrameColor);
+    }
 
     if (savedFrameEnabled !== null) {
         frameEnabled.checked = savedFrameEnabled === 'true';
@@ -64,6 +72,33 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (savedFrameColor) {
         document.body.style.setProperty('--frame-color', savedFrameColor);
+        if (frameColorPicker) {
+            frameColorPicker.value = savedFrameColor;
+        }
+        updateActiveFrameColorButton(savedFrameColor);
+    }
+
+    // Update active frame color button state
+    function updateActiveFrameColorButton(color) {
+        const group = document.querySelector('[data-property="--frame-color"]');
+        if (group) {
+            group
+                .querySelectorAll('.frame-color-btn, .frame-color-picker')
+                .forEach((btn) => {
+                    btn.classList.remove('active');
+                });
+
+            const matchingBtn = group.querySelector(
+                `.frame-color-btn[data-color="${color}"]`
+            );
+            if (matchingBtn) {
+                matchingBtn.classList.add('active');
+            } else {
+                if (frameColorPicker) {
+                    frameColorPicker.classList.add('active');
+                }
+            }
+        }
     }
 
     // Frame enabled/disabled toggle
@@ -108,22 +143,23 @@ document.addEventListener('DOMContentLoaded', function () {
     // Frame color buttons
     frameColorButtons.forEach((button) => {
         button.addEventListener('click', function () {
-            const color = this.getAttribute('data-color');
+            const color = this.dataset.color;
             document.body.style.setProperty('--frame-color', color);
+            if (frameColorPicker) {
+                frameColorPicker.value = color;
+            }
+            updateActiveFrameColorButton(color);
             localStorage.setItem('frame-color', color);
-
-            // Visual feedback: highlight selected button
-            frameColorButtons.forEach((btn) => btn.classList.remove('active'));
-            this.classList.add('active');
         });
     });
 
-    // Highlight the currently selected color on load
-    if (savedFrameColor) {
-        frameColorButtons.forEach((button) => {
-            if (button.getAttribute('data-color') === savedFrameColor) {
-                button.classList.add('active');
-            }
+    // Frame color picker handler
+    if (frameColorPicker) {
+        frameColorPicker.addEventListener('input', function () {
+            const color = this.value;
+            document.body.style.setProperty('--frame-color', color);
+            updateActiveFrameColorButton(color);
+            localStorage.setItem('frame-color', color);
         });
     }
 });

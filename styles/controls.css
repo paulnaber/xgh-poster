@@ -958,10 +958,63 @@
     margin-top: 4px;
 }
 
+.frame-color-picker {
+    width: 28px;
+    height: 28px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    padding: 0;
+    background: linear-gradient(
+        135deg,
+        #ff0000 0%,
+        #ff7f00 14%,
+        #ffff00 28%,
+        #00ff00 42%,
+        #0000ff 56%,
+        #4b0082 70%,
+        #9400d3 84%,
+        #ff0000 100%
+    );
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    overflow: hidden;
+}
+
+.frame-color-picker::-webkit-color-swatch-wrapper {
+    padding: 0;
+    opacity: 0;
+}
+
+.frame-color-picker::-webkit-color-swatch {
+    border: none;
+    border-radius: 2px;
+    opacity: 0;
+}
+
+.frame-color-picker::-moz-color-swatch {
+    border: none;
+    border-radius: 2px;
+    opacity: 0;
+}
+
+.frame-color-picker:hover {
+    transform: scale(1.1);
+    border-color: #666;
+}
+
+.frame-color-picker.active {
+    border-color: #000;
+    border-width: 3px;
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+}
+
 .frame-color-btn {
-    width: 30px;
-    height: 30px;
-    border: 2px solid #ddd;
+    width: 28px;
+    height: 28px;
+    border: 2px solid #ccc;
     border-radius: 4px;
     cursor: pointer;
     transition: all 0.2s ease;
@@ -970,12 +1023,12 @@
 }
 
 .frame-color-btn:hover {
-    border-color: #999;
-    transform: scale(1.05);
+    border-color: #666;
+    transform: scale(1.1);
 }
 
 .frame-color-btn.active {
-    border-color: #333;
+    border-color: #000;
     border-width: 3px;
-    transform: scale(1.1);
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
 }

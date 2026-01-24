@@ -500,14 +500,34 @@
                             <option value="double">Double</option>
                         </select>
                     </div>
-                    <div class="frame-control">
-                        <label>Color:</label>
-                        <div class="color-options" data-target="frame">
-                            <button class="frame-color-btn" data-color="#fff" style="background: #fff" title="White"></button>
-                            <button class="frame-color-btn" data-color="#000" style="background: #000" title="Black"></button>
-                            <button class="frame-color-btn" data-color="#fffb00eb" style="background: #fffb00eb" title="Yellow"></button>
-                            <button class="frame-color-btn" data-color="#00c8ffeb" style="background: #00c8ffeb" title="Cyan"></button>
-                            <button class="frame-color-btn" data-color="#c00" style="background: #c00" title="Red"></button>
+                    <div class="color-group">
+                        <span class="color-label">Color:</span>
+                        <div class="color-options" data-property="--frame-color">
+                            <input
+                                type="color"
+                                class="frame-color-picker"
+                                value="#ffffff"
+                                data-default="#ffffff"
+                                title="Custom Color"
+                            />
+                            <button
+                                class="color-btn frame-color-btn"
+                                data-color="#fff"
+                                style="background: #fff"
+                                title="White"
+                            ></button>
+                            <button
+                                class="color-btn frame-color-btn"
+                                data-color="#000"
+                                style="background: #000"
+                                title="Black"
+                            ></button>
+                            <button
+                                class="color-btn frame-color-btn"
+                                data-color="#fffb00eb"
+                                style="background: #fffb00eb"
+                                title="Yellow"
+                            ></button>
                         </div>
                     </div>
                 </div>
