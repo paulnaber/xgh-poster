@@ -3,6 +3,7 @@
 document.addEventListener('DOMContentLoaded', function () {
     const editBtn = document.getElementById('edit-btn');
     const resetBtn = document.getElementById('reset-btn');
+    const hideControlsBtn = document.getElementById('hide-controls-btn');
     const modal = document.getElementById('css-modal');
     const modalClose = document.querySelector('.modal-close');
     const closeModalBtn = document.getElementById('close-modal-btn');
@@ -476,6 +477,16 @@ document.addEventListener('DOMContentLoaded', function () {
             closeModal();
         }
     });
+
+    // Hide all controls button
+    if (hideControlsBtn) {
+        hideControlsBtn.addEventListener('click', function () {
+            const allPanels = document.querySelectorAll('.control-panel');
+            allPanels.forEach((panel) => {
+                panel.style.display = 'none';
+            });
+        });
+    }
 
     // Load saved properties on page load
     const savedProperties = localStorage.getItem('customCSSProperties');
