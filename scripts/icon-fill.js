@@ -9,7 +9,8 @@ let savedIconFilter = localStorage.getItem('iconFilter');
 if (!savedIconColor) {
     // Get default from CSS
     const bodyStyles = getComputedStyle(document.body);
-    savedIconColor = bodyStyles.getPropertyValue('--icon-color').trim() || '#ffffff';
+    savedIconColor =
+        bodyStyles.getPropertyValue('--icon-color').trim() || '#ffffff';
 }
 
 if (savedIconFilter) {
