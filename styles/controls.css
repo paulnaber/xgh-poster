@@ -429,7 +429,6 @@
 .slider-value {
     font-family: Arial, sans-serif;
     font-size: 11px;
-    color: #666;
     text-align: right;
 }
 
@@ -493,9 +492,14 @@
 /* Universal control item - 3 column grid: label, input, unit */
 .control-item {
     display: grid;
-    grid-template-columns: 1fr 60px 18px;
+    grid-template-columns: 1fr 100px 12px;
     align-items: center;
-    gap: 8px;
+    gap: 4px;
+}
+
+/* Control items with sliders need more space for value display */
+.control-item:has(input[type='range']) {
+    grid-template-columns: 1fr 100px 28px;
 }
 
 /* Labels */
@@ -512,16 +516,18 @@
     font-size: 11px;
     color: #666;
     font-weight: 500;
-    text-align: center;
+    text-align: left;
+    justify-self: start;
 }
 
 /* Value displays (for sliders, etc) */
 .control-item .value-display {
     font-family: 'Courier New', monospace;
     font-size: 11px;
-    color: #666;
+    color: #000;
     font-weight: 500;
-    text-align: right;
+    text-align: left;
+    justify-self: start;
 }
 
 /* ===================================
@@ -565,7 +571,7 @@
 
 /* Number inputs */
 .control-item input[type='number'] {
-    width: 60px;
+    width: 100%;
     padding: 8px 4px;
     border: 2px solid #ccc;
     border-radius: 4px;
@@ -640,7 +646,7 @@
 /* Select dropdowns */
 .control-item select {
     width: 100%;
-    padding: 8px;
+    padding: 7px;
     border: 2px solid #ccc;
     border-radius: 4px;
     font-family: Arial, sans-serif;
@@ -689,6 +695,12 @@
 
 /* Font control selects should grow to fill available space */
 .font-controls .control-item select {
+    width: 100%;
+}
+
+/* Background control selects should span columns 2 and 3 */
+.background-controls .control-item select {
+    grid-column: 2 / 4;
     width: 100%;
 }
 
