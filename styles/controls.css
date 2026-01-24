@@ -189,6 +189,59 @@
     gap: 6px;
 }
 
+.color-picker-input {
+    width: 28px;
+    height: 28px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    padding: 0;
+    background: linear-gradient(
+        135deg,
+        #ff0000 0%,
+        #ff7f00 14%,
+        #ffff00 28%,
+        #00ff00 42%,
+        #0000ff 56%,
+        #4b0082 70%,
+        #9400d3 84%,
+        #ff0000 100%
+    );
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    overflow: hidden;
+}
+
+.color-picker-input::-webkit-color-swatch-wrapper {
+    padding: 0;
+    opacity: 0;
+}
+
+.color-picker-input::-webkit-color-swatch {
+    border: none;
+    border-radius: 2px;
+    opacity: 0;
+}
+
+.color-picker-input::-moz-color-swatch {
+    border: none;
+    border-radius: 2px;
+    opacity: 0;
+}
+
+.color-picker-input:hover {
+    transform: scale(1.1);
+    border-color: #666;
+}
+
+.color-picker-input.active {
+    border-color: #000;
+    border-width: 3px;
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+}
+
 .color-btn {
     width: 28px;
     height: 28px;
@@ -240,10 +293,116 @@
     border-radius: 2px;
 }
 
+.icon-color-picker {
+    width: 28px;
+    height: 28px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    padding: 0;
+    background: linear-gradient(
+        135deg,
+        #ff0000 0%,
+        #ff7f00 14%,
+        #ffff00 28%,
+        #00ff00 42%,
+        #0000ff 56%,
+        #4b0082 70%,
+        #9400d3 84%,
+        #ff0000 100%
+    );
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    overflow: hidden;
+}
+
+.icon-color-picker::-webkit-color-swatch-wrapper {
+    padding: 0;
+    opacity: 0;
+}
+
+.icon-color-picker::-webkit-color-swatch {
+    border: none;
+    border-radius: 2px;
+    opacity: 0;
+}
+
+.icon-color-picker::-moz-color-swatch {
+    border: none;
+    border-radius: 2px;
+    opacity: 0;
+}
+
+.icon-color-picker:hover {
+    transform: scale(1.1);
+    border-color: #666;
+}
+
+.icon-color-picker.active {
+    border-color: #000;
+    border-width: 3px;
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+}
+
 .gradient-section {
     display: flex;
     flex-direction: column;
     gap: 12px;
+}
+
+.gradient-color-picker {
+    width: 28px;
+    height: 28px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    padding: 0;
+    background: linear-gradient(
+        135deg,
+        #ff0000 0%,
+        #ff7f00 14%,
+        #ffff00 28%,
+        #00ff00 42%,
+        #0000ff 56%,
+        #4b0082 70%,
+        #9400d3 84%,
+        #ff0000 100%
+    );
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    overflow: hidden;
+}
+
+.gradient-color-picker::-webkit-color-swatch-wrapper {
+    padding: 0;
+    opacity: 0;
+}
+
+.gradient-color-picker::-webkit-color-swatch {
+    border: none;
+    border-radius: 2px;
+    opacity: 0;
+}
+
+.gradient-color-picker::-moz-color-swatch {
+    border: none;
+    border-radius: 2px;
+    opacity: 0;
+}
+
+.gradient-color-picker:hover {
+    transform: scale(1.1);
+    border-color: #666;
+}
+
+.gradient-color-picker.active {
+    border-color: #000;
+    border-width: 3px;
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
 }
 
 .gradient-control {

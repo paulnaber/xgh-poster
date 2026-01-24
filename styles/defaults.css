@@ -34,6 +34,7 @@ body {
     --zoom-scale: 0.25;
 
     /* Icon configuration */
+    --icon-color: #fffb00;
     --icon-filter: none;
     --icon-opacity: 1;
 
