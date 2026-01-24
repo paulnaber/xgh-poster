@@ -1,19 +1,11 @@
-// Panel toggle functionality with dynamic positioning
+// Panel toggle functionality
 const panels = document.querySelectorAll('.control-panel');
 
-// Calculate panel positions based on expanded/collapsed state
-function updatePanelPositions() {
-    let currentTop = 20; // Start position
-    const gap = 10; // Gap between panels
-
-    panels.forEach((panel) => {
-        panel.style.top = currentTop + 'px';
-
-        // Get actual height of the panel
-        const height = panel.offsetHeight;
-        currentTop += height + gap;
-    });
-}
+// Clear any old inline positioning styles
+panels.forEach((panel) => {
+    panel.style.top = '';
+    panel.style.position = '';
+});
 
 panels.forEach((panel) => {
     const header = panel.querySelector('.panel-header');
@@ -41,12 +33,5 @@ panels.forEach((panel) => {
             `panel-${panelClass}-collapsed`,
             panel.classList.contains('collapsed')
         );
-
-        // Update positions after state change
-        // Use setTimeout to allow CSS transition to update height
-        setTimeout(updatePanelPositions, 10);
     });
 });
-
-// Initial position calculation
-setTimeout(updatePanelPositions, 10);

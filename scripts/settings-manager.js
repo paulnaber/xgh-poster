@@ -481,10 +481,10 @@ document.addEventListener('DOMContentLoaded', function () {
     // Hide all controls button
     if (hideControlsBtn) {
         hideControlsBtn.addEventListener('click', function () {
-            const allPanels = document.querySelectorAll('.control-panel');
-            allPanels.forEach((panel) => {
-                panel.style.display = 'none';
-            });
+            const controlsWrapper = document.querySelector('.controls-wrapper');
+            if (controlsWrapper) {
+                controlsWrapper.style.display = 'none';
+            }
         });
     }
 
