@@ -37,6 +37,7 @@ document.addEventListener('DOMContentLoaded', function () {
         '--icon-filter',
         '--icon-opacity',
         '--background-image',
+        '--background-opacity',
         '--poster-padding-top',
         '--poster-padding-right',
         '--poster-padding-bottom',
