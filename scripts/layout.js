@@ -213,12 +213,11 @@ document.addEventListener('DOMContentLoaded', function () {
     } else {
         // Initialize with default value from CSS
         const bodyStyles = getComputedStyle(document.body);
-        const defaultValue = bodyStyles.getPropertyValue('--axioms-column-flow').trim() === 'true';
+        const defaultValue =
+            bodyStyles.getPropertyValue('--axioms-column-flow').trim() ===
+            'true';
         axiomsColumnFlow.checked = defaultValue;
-        document.body.style.setProperty(
-            '--axioms-column-flow',
-            defaultValue
-        );
+        document.body.style.setProperty('--axioms-column-flow', defaultValue);
     }
 
     if (savedAxiomsGridColumns) {
