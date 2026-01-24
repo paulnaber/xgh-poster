@@ -598,6 +598,37 @@
     cursor: pointer;
     grid-column: 2;
     justify-self: start;
+    margin: 0;
+    padding: 0;
+    /* Add border to match other inputs */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: white;
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+.control-item input[type='checkbox']:checked::before {
+    content: '✓';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 14px;
+    color: #333;
+    line-height: 1;
+}
+
+.control-item input[type='checkbox']:hover {
+    border-color: #999;
+}
+
+.control-item input[type='checkbox']:focus {
+    outline: none;
+    border-color: #666;
 }
 
 /* Range sliders */
