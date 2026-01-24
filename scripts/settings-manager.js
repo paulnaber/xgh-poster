@@ -38,6 +38,7 @@ document.addEventListener('DOMContentLoaded', function () {
         '--icon-opacity',
         '--background-image',
         '--background-opacity',
+        '--background-invert',
         '--poster-padding-top',
         '--poster-padding-right',
         '--poster-padding-bottom',

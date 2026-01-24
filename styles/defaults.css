@@ -41,6 +41,7 @@ body {
     /* Background configuration */
     --background-image: url('../images/solid-painted-concrete-wall-textured-backdrop.jpg');
     --background-opacity: 0.3;
+    --background-invert: 0;
 
     /* Layout configuration */
     --poster-padding-top: 250px;
