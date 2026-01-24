@@ -314,18 +314,24 @@
                 <span class="toggle-icon">▼</span>
             </div>
             <div class="panel-content">
-                <label for="background-selector">Background Image:</label>
-                <select id="background-selector">
-                    <option value="url('../images/solid-painted-concrete-wall-textured-backdrop.jpg')">Concrete Wall</option>
-                    <option value="url('../images/canvas-texture.jpg')">Canvas</option>
-                    <option value="none">None</option>
-                </select>
-                <label for="background-opacity">Opacity:</label>
-                <input type="range" id="background-opacity" min="0" max="1" step="0.01" value="0.3" />
-                <span id="background-opacity-value" class="value-display">0.30</span>
-                <label for="background-invert">Invert:</label>
-                <input type="range" id="background-invert" min="0" max="1" step="0.01" value="0" />
-                <span id="background-invert-value" class="value-display">0.00</span>
+                <div class="control-item">
+                    <label for="background-selector">Background Image:</label>
+                    <select id="background-selector">
+                        <option value="url('../images/solid-painted-concrete-wall-textured-backdrop.jpg')">Concrete Wall</option>
+                        <option value="url('../images/canvas-texture.jpg')">Canvas</option>
+                        <option value="none">None</option>
+                    </select>
+                </div>
+                <div class="control-item">
+                    <label for="background-opacity">Opacity:</label>
+                    <input type="range" id="background-opacity" min="0" max="1" step="0.01" value="0.3" />
+                    <span id="background-opacity-value" class="value-display">0.30</span>
+                </div>
+                <div class="control-item">
+                    <label for="background-invert">Invert:</label>
+                    <input type="range" id="background-invert" min="0" max="1" step="0.01" value="0" />
+                    <span id="background-invert-value" class="value-display">0.00</span>
+                </div>
             </div>
         </div>
         <div class="font-controls control-panel collapsed no-zoom">
@@ -334,56 +340,50 @@
                 <span class="toggle-icon">▼</span>
             </div>
             <div class="panel-content">
-                <div class="font-control">
-                    <label for="headline-font">Headline:</label>
-                    <div class="font-input-group">
-                        <select id="headline-font">
-                            <option value="'academy', sans-serif">Academy</option>
-                            <option value="'baskerville', serif">Baskerville</option>
-                            <option value="'Helvetica Neue', Helvetica, Arial, sans-serif">Helvetica</option>
-                            <option value="'Georgia', serif">Georgia</option>
-                            <option value="'Times New Roman', Times, serif">Times New Roman</option>
-                            <option value="'Courier New', Courier, monospace">Courier New</option>
-                            <option value="'Arial Black', sans-serif">Arial Black</option>
-                            <option value="'Impact', sans-serif">Impact</option>
-                        </select>
-                        <input type="number" id="headline-size" value="250" min="10" max="500" step="5" />
-                        <span class="font-size-unit">px</span>
-                    </div>
+                <label for="headline-font">Headline:</label>
+                <div class="control-item">
+                    <select id="headline-font">
+                        <option value="'academy', sans-serif">Academy</option>
+                        <option value="'baskerville', serif">Baskerville</option>
+                        <option value="'Helvetica Neue', Helvetica, Arial, sans-serif">Helvetica</option>
+                        <option value="'Georgia', serif">Georgia</option>
+                        <option value="'Times New Roman', Times, serif">Times New Roman</option>
+                        <option value="'Courier New', Courier, monospace">Courier New</option>
+                        <option value="'Arial Black', sans-serif">Arial Black</option>
+                        <option value="'Impact', sans-serif">Impact</option>
+                    </select>
+                    <input type="number" id="headline-size" value="250" min="10" max="500" step="5" />
+                    <span class="unit">px</span>
                 </div>
-                <div class="font-control">
-                    <label for="axiom-number-font">Axiom Numbers:</label>
-                    <div class="font-input-group">
-                        <select id="axiom-number-font">
-                            <option value="'academy', sans-serif">Academy</option>
-                            <option value="'baskerville', serif">Baskerville</option>
-                            <option value="'Helvetica Neue', Helvetica, Arial, sans-serif">Helvetica</option>
-                            <option value="'Georgia', serif">Georgia</option>
-                            <option value="'Times New Roman', Times, serif">Times New Roman</option>
-                            <option value="'Courier New', Courier, monospace">Courier New</option>
-                            <option value="'Arial Black', sans-serif">Arial Black</option>
-                            <option value="'Impact', sans-serif">Impact</option>
-                        </select>
-                        <input type="number" id="axiom-number-size" value="107" min="10" max="200" step="5" />
-                        <span class="font-size-unit">px</span>
-                    </div>
+                <label for="axiom-number-font">Axiom Numbers:</label>
+                <div class="control-item">
+                    <select id="axiom-number-font">
+                        <option value="'academy', sans-serif">Academy</option>
+                        <option value="'baskerville', serif">Baskerville</option>
+                        <option value="'Helvetica Neue', Helvetica, Arial, sans-serif">Helvetica</option>
+                        <option value="'Georgia', serif">Georgia</option>
+                        <option value="'Times New Roman', Times, serif">Times New Roman</option>
+                        <option value="'Courier New', Courier, monospace">Courier New</option>
+                        <option value="'Arial Black', sans-serif">Arial Black</option>
+                        <option value="'Impact', sans-serif">Impact</option>
+                    </select>
+                    <input type="number" id="axiom-number-size" value="107" min="10" max="200" step="5" />
+                    <span class="unit">px</span>
                 </div>
-                <div class="font-control">
-                    <label for="body-font">Body Text:</label>
-                    <div class="font-input-group">
-                        <select id="body-font">
-                            <option value="'baskerville', serif">Baskerville</option>
-                            <option value="'academy', sans-serif">Academy</option>
-                            <option value="'Helvetica Neue', Helvetica, Arial, sans-serif">Helvetica</option>
-                            <option value="'Georgia', serif">Georgia</option>
-                            <option value="'Times New Roman', Times, serif">Times New Roman</option>
-                            <option value="'Courier New', Courier, monospace">Courier New</option>
-                            <option value="'Arial', sans-serif">Arial</option>
-                            <option value="'Verdana', sans-serif">Verdana</option>
-                        </select>
-                        <input type="number" id="body-size" value="47" min="10" max="100" step="1" />
-                        <span class="font-size-unit">px</span>
-                    </div>
+                <label for="body-font">Body Text:</label>
+                <div class="control-item">
+                    <select id="body-font">
+                        <option value="'baskerville', serif">Baskerville</option>
+                        <option value="'academy', sans-serif">Academy</option>
+                        <option value="'Helvetica Neue', Helvetica, Arial, sans-serif">Helvetica</option>
+                        <option value="'Georgia', serif">Georgia</option>
+                        <option value="'Times New Roman', Times, serif">Times New Roman</option>
+                        <option value="'Courier New', Courier, monospace">Courier New</option>
+                        <option value="'Arial', sans-serif">Arial</option>
+                        <option value="'Verdana', sans-serif">Verdana</option>
+                    </select>
+                    <input type="number" id="body-size" value="47" min="10" max="100" step="1" />
+                    <span class="unit">px</span>
                 </div>
             </div>
         </div>
@@ -393,73 +393,72 @@
                 <span class="toggle-icon">▼</span>
             </div>
             <div class="panel-content">
-                <div class="layout-section">
+                <div class="control-section">
                     <h4 class="section-title">Poster Padding</h4>
-                    <div class="layout-control">
+                    <div class="control-item">
                         <label for="poster-padding-top">Top:</label>
                         <input type="number" id="poster-padding-top" value="250" min="0" max="1000" step="10" />
                         <span class="unit">px</span>
                     </div>
-                    <div class="layout-control">
+                    <div class="control-item">
                         <label for="poster-padding-right">Right:</label>
                         <input type="number" id="poster-padding-right" value="300" min="0" max="1000" step="10" />
                         <span class="unit">px</span>
                     </div>
-                    <div class="layout-control">
+                    <div class="control-item">
                         <label for="poster-padding-bottom">Bottom:</label>
                         <input type="number" id="poster-padding-bottom" value="250" min="0" max="1000" step="10" />
                         <span class="unit">px</span>
                     </div>
-                    <div class="layout-control">
+                    <div class="control-item">
                         <label for="poster-padding-left">Left:</label>
                         <input type="number" id="poster-padding-left" value="300" min="0" max="1000" step="10" />
                         <span class="unit">px</span>
                     </div>
                 </div>
-                <div class="layout-section">
+                <div class="control-section">
                     <h4 class="section-title">Icon & Spacing</h4>
-                    <div class="layout-control">
+                    <div class="control-item">
                         <label for="icon-size">Icon Size:</label>
                         <input type="number" id="icon-size" value="500" min="100" max="1000" step="10" />
                         <span class="unit">px</span>
                     </div>
-                    <div class="layout-control">
+                    <div class="control-item">
                         <label for="headline-margin">Headline Margin:</label>
                         <input type="number" id="headline-margin" value="170" min="0" max="500" step="10" />
                         <span class="unit">px</span>
                     </div>
                 </div>
-                <div class="layout-section">
+                <div class="control-section">
                     <h4 class="section-title">Axioms Grid</h4>
-                    <div class="layout-control">
-                        <label>
-                            <input type="checkbox" id="axioms-column-flow" />
-                            Fill columns first
-                        </label>
+                    <div class="control-item">
+                        <label for="axioms-column-flow">Fill columns first</label>
+                        <input type="checkbox" id="axioms-column-flow" />
+                        <span></span>
                     </div>
-                    <div class="layout-control">
+                    <div class="control-item">
                         <label for="axioms-grid-columns">Grid Columns:</label>
                         <input type="number" id="axioms-grid-columns" value="2" min="1" max="4" step="1" />
                     </div>
-                    <div class="layout-control">
+                    <div class="control-item">
                         <label for="axiom-gap-row">Gap Row:</label>
                         <input type="number" id="axiom-gap-row" value="76" min="0" max="400" step="1" />
                         <span class="unit">px</span>
                     </div>
-                    <div class="layout-control">
+                    <div class="control-item">
                         <label for="axiom-gap-column">Gap Column:</label>
                         <input type="number" id="axiom-gap-column" value="151" min="0" max="400" step="1" />
                         <span class="unit">px</span>
                     </div>
                 </div>
-                <div class="layout-section">
+                <div class="control-section">
                     <h4 class="section-title">Axiom Item</h4>
-                    <div class="layout-control">
+                    <div class="control-item">
                         <label for="axiom-gap">Gap:</label>
                         <input type="number" id="axiom-gap" value="180" min="50" max="500" step="10" />
                         <span class="unit">px</span>
                     </div>
-                    <div class="layout-control">
+                    <div class="control-item">
                         <label for="axiom-text-offset">Offset:</label>
                         <input type="number" id="axiom-text-offset" value="-16" min="-100" max="100" step="1" />
                         <span class="unit">px</span>
@@ -473,32 +472,32 @@
                 <span class="toggle-icon">▼</span>
             </div>
             <div class="panel-content">
-                <div class="frame-section">
-                    <div class="frame-control">
+                <div class="control-section">
+                    <div class="control-item">
                         <label for="frame-enabled">Enable Frame:</label>
                         <input type="checkbox" id="frame-enabled" checked />
                     </div>
-                    <div class="frame-control">
+                    <div class="control-item">
                         <label for="frame-thickness">Thickness:</label>
                         <input type="number" id="frame-thickness" value="5" min="1" max="200" step="1" />
                         <span class="unit">px</span>
                     </div>
-                    <div class="frame-control">
+                    <div class="control-item">
                         <label for="frame-distance">Distance:</label>
                         <input type="number" id="frame-distance" value="120" min="0" max="500" step="5" />
                         <span class="unit">px</span>
                     </div>
-                    <div class="frame-control">
+                    <div class="control-item">
                         <label for="frame-radius">Corner Radius:</label>
                         <input type="number" id="frame-radius" value="0" min="0" max="100" step="1" />
                         <span class="unit">px</span>
                     </div>
-                    <div class="frame-control">
+                    <div class="control-item">
                         <label for="frame-opacity">Opacity:</label>
                         <input type="range" id="frame-opacity" min="0" max="1" step="0.01" value="1" />
                         <span id="frame-opacity-value" class="value-display">1.00</span>
                     </div>
-                    <div class="frame-control">
+                    <div class="control-item">
                         <label for="frame-style">Style:</label>
                         <select id="frame-style">
                             <option value="solid">Solid</option>
