@@ -322,6 +322,17 @@ document.addEventListener('DOMContentLoaded', function () {
                 .getPropertyValue('--background-image')
                 .trim();
         }
+
+        // Icon opacity
+        const iconOpacity = document.getElementById('icon-opacity');
+        if (iconOpacity) {
+            iconOpacity.value = parseNumber(
+                bodyStyles.getPropertyValue('--icon-opacity')
+            );
+            const display = document.getElementById('icon-opacity-value');
+            if (display) display.textContent = iconOpacity.value.toFixed(2);
+        }
+
         zoomSlider = document.getElementById('zoom-slider');
         if (zoomSlider) {
             const zoomScale = parseNumber(

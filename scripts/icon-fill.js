@@ -7,16 +7,9 @@ let savedIconColor = localStorage.getItem('iconColor');
 let savedIconFilter = localStorage.getItem('iconFilter');
 
 if (!savedIconColor) {
-    // Set default to first predefined color
-    const firstIconBtn = document.querySelector('.icon-fill-btn');
-    if (firstIconBtn) {
-        savedIconColor = firstIconBtn.dataset.color;
-        savedIconFilter = firstIconBtn.dataset.filter;
-        localStorage.setItem('iconColor', savedIconColor);
-        localStorage.setItem('iconFilter', savedIconFilter);
-    } else {
-        savedIconColor = '#fffb00';
-    }
+    // Get default from CSS
+    const bodyStyles = getComputedStyle(document.body);
+    savedIconColor = bodyStyles.getPropertyValue('--icon-color').trim() || '#ffffff';
 }
 
 if (savedIconFilter) {
@@ -158,5 +151,33 @@ if (iconColorPicker) {
 
         // Save to localStorage
         localStorage.setItem('iconColor', color);
+    });
+}
+
+// Icon opacity slider
+const iconOpacity = document.getElementById('icon-opacity');
+const iconOpacityValue = document.getElementById('icon-opacity-value');
+
+if (iconOpacity && iconOpacityValue) {
+    // Load saved opacity from localStorage or use default
+    const savedOpacity = localStorage.getItem('icon-opacity');
+    const currentOpacity =
+        savedOpacity ||
+        getComputedStyle(document.body)
+            .getPropertyValue('--icon-opacity')
+            .trim() ||
+        '0.8';
+
+    // Set the slider to match current value
+    iconOpacity.value = currentOpacity;
+    iconOpacityValue.textContent = parseFloat(currentOpacity).toFixed(2);
+    document.body.style.setProperty('--icon-opacity', currentOpacity);
+
+    // Listen for opacity changes
+    iconOpacity.addEventListener('input', function () {
+        const opacity = this.value;
+        document.body.style.setProperty('--icon-opacity', opacity);
+        iconOpacityValue.textContent = parseFloat(opacity).toFixed(2);
+        localStorage.setItem('icon-opacity', opacity);
     });
 }

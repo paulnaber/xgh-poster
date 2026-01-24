@@ -34,9 +34,9 @@ body {
     --zoom-scale: 0.25;
 
     /* Icon configuration */
-    --icon-color: #fffb00;
+    --icon-color: #ffffff;
     --icon-filter: none;
-    --icon-opacity: 0.8;
+    --icon-opacity: 0.65;
 
     /* Background configuration */
     --background-image: url('../images/solid-painted-concrete-wall-textured-backdrop.jpg');
@@ -65,5 +65,5 @@ body {
     --frame-distance: 120px;
     --frame-radius: 0px;
     --frame-style: solid;
-    --frame-opacity: 1;
+    --frame-opacity: 0.4;
 }
