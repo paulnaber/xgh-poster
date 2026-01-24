@@ -9,13 +9,18 @@ I saved some images inside the results directory.
 **_Live Configurator here ->_** https://paulnaber.github.io/xgh-poster/  
 **_Displate link_** -> https://displate.com/artist/paulnaber?art=63dfad5946daf
 
-> Of course this project is created using the XGH axioms in mind!
+> Of course this project is fully vibecoded using the XGH axioms in mind!
 
 ## Showcases
 
-![Showcase Image 1](./showcases/showcase-1.png)
-![Showcase Image 2](./showcases/showcase-2.png)
+![Configurator](./showcases/configurator.png)
+![Showcase Image 1](./showcases/image.png)
+![Showcase Image 2](./showcases/image-1.png)
 
 ### Why is there no tests in this project?
 
-see axiom 20
+see axiom 20.
+
+### Why is there no documentation?
+
+see axiom 24.
