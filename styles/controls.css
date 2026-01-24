@@ -596,7 +596,7 @@
 
 /* Range sliders */
 .control-item input[type='range'] {
-    width: 100px;
+    width: 100%;
     grid-column: 2;
     justify-self: start;
     cursor: pointer;
@@ -639,7 +639,7 @@
 
 /* Select dropdowns */
 .control-item select {
-    width: 110px;
+    width: 100%;
     padding: 8px;
     border: 2px solid #ccc;
     border-radius: 4px;
